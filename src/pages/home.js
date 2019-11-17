@@ -14,11 +14,19 @@
 //   firebase.auth().signOut();
 // }
 
-const Home = () => {
+const Home = (props) => {
+  // let layout = '';
+  // props.events.forEach(snap => {
+  //   const event = snap.data();
+  //   layout += CardEvent({
+  //     id: snap.id,
+  //     event,
+  //   })
+  // });
   const template =
     `
   <section>
-   
+    
   </section>
   `;
   return template;
