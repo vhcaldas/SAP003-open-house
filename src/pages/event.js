@@ -26,6 +26,11 @@ const createEvent = () => {
     });
 };
 
+const cleanForm = () => {
+  document.querySelector('.form').reset();
+}
+
+
 // Funcao renderizar o mapa
 // const maps = () => {
 // 
@@ -94,7 +99,7 @@ const Event = (props) => {
   ${Button({
     class: 'button-back',
     title: 'LIMPAR',
-    // onClick: cleanForm,
+    onClick: cleanForm,
   })}
   ${Button({
     class: 'button-continue',
