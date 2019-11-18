@@ -6,7 +6,10 @@ const Input = (props) => {
     value="${props.value || ''}"
     placeholder="${props.placeholder}"
     maxlength="${props.maxlength}"
-    type="${props.type}" 
+    type="${props.type}"
+    id="${props.id}"
+    min="${props.min}"
+    max="${props.max}" 
      onchange="input.handleChange(event, ${props.onchange})" required>
     `;
 
@@ -16,9 +19,9 @@ const Input = (props) => {
 window.input = {
   handleChange: (event, callback) => {
     event.preventDefault();
-    if(callback){
+    if (callback) {
       callback(event);
-    }      
+    }
   },
 };
 
