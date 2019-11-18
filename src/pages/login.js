@@ -1,8 +1,7 @@
 import Input from '../components/input.js'
 import Button from '../components/button.js'
-import Register from './register.js';
-//Funcao para fazer login
 
+//Funcao para fazer login
 const signIn = () => {
   const email = document.querySelector('.input-email').value;
   const password = document.querySelector('.input-password').value;
@@ -25,7 +24,6 @@ const signIn = () => {
 };
 
 // Funcao ir pagina de registro - chamar no botao registar-se
-
 const register = () => {
   window.location = '#Register';
 }
@@ -37,26 +35,27 @@ const Login = () => {
     <img class="login-logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
     <form class="login-form" class="form">
     ${Input({
-      class: 'input-email',
-      placeholder: 'Email',
-      type:'email',
-    })}
+    class: 'input-email',
+    placeholder: 'Email',
+    type: 'email',
+  })}
     ${Input({
+
       class: 'input-password',
       placeholder: 'Senha',
       type:'password',
     })}
     <div class="login-buttons">
     ${Button({
-      class: 'button-login',
-      title: 'Entrar',
-      onClick: signIn,
-    })}
+    class: 'button-login',
+    title: 'ENTRAR',
+    onClick: signIn,
+  })}
     ${Button({
-      class: 'button-register',
-      title: 'Novo Cadastro',
-      onClick: register,
-    })}
+    class: 'button-register',
+    title: 'REGISTRAR',
+    onClick: register,
+  })}
     </div>
     <p class="error"></p>
     </form>

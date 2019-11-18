@@ -1,5 +1,6 @@
-import Input from '../components/input.js'
+import Input from '../components/input.js';
 import Button from '../components/button.js';
+import InputFunction from '../components/input-function.js';
 
 const createAccount = () => {
   const nameInput = document.querySelector('.input-name').value;
@@ -51,21 +52,19 @@ const createAccount = () => {
 
 const zipNumber = () => {
   const cep = event.target.value;
-  if(cep.length === 8){
+  if (cep.length === 8) {
     fetch(`https://viacep.com.br/ws/${cep}/json`)
-    .then(response => response.json())
-    .then(response =>{
-      document.querySelector('.input-address').value=response.logradouro;
-      document.querySelector('.input-neighborhood').value=response.bairro;
-      document.querySelector('.input-city').value=response.localidade;
-    })
-
+      .then(response => response.json())
+      .then(response => {
+        document.querySelector('.input-address').value = response.logradouro;
+        document.querySelector('.input-neighborhood').value = response.bairro;
+        document.querySelector('.input-city').value = response.localidade;
+      })
   }
-
 }
 
 const backToLogin = () => {
-  window.location='#Login';
+  window.location = '#Login';
 }
 
 const Register = () => {
@@ -74,74 +73,75 @@ const Register = () => {
     <img class="logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
     <form class="form">
     ${Input({
-      class: 'input-name',
-      placeholder: 'Nome do estabelecimento',
-      type:'text',
-    })}
+    class: 'input-name',
+    placeholder: 'Nome do estabelecimento',
+    type: 'text',
+  })}
     ${Input({
       class: 'input-CNPJ',
       placeholder: 'CNPJ',
       type:'number',
     })}
-    ${Input({
+    ${InputFunction({
       class: 'input-CEP',
       placeholder: 'CEP - Ex.01234567',
       type:'number',
       onchange: zipNumber,
-    })}${Input({
-      class: 'input-address',
-      placeholder: 'Endereço - Ex.Rua/Avenida',
-      type:'text',
     })}
     ${Input({
-      class: 'input-number',
-      placeholder: 'Nº',
-      type:'number',
-    })}
+    class: 'input-address',
+    placeholder: 'Endereço - Ex.Rua/Avenida',
+    type: 'text',
+  })}
     ${Input({
-      class: 'input-additionalAddress',
-      placeholder: 'Complemento',
-      type:'text',
-    })}
+    class: 'input-number',
+    placeholder: 'Nº',
+    type: 'number',
+  })}
     ${Input({
-      class: 'input-neighborhood',
-      placeholder: 'Bairro',
-      type:'text',
-    })}
+    class: 'input-additionalAddress',
+    placeholder: 'Complemento',
+    type: 'text',
+  })}
     ${Input({
-      class: 'input-city',
-      placeholder: 'Cidade',
-      type:'text',
-    })}
+    class: 'input-neighborhood',
+    placeholder: 'Bairro',
+    type: 'text',
+  })}
+    ${Input({
+    class: 'input-city',
+    placeholder: 'Cidade',
+    type: 'text',
+  })}
     <select>
       <option value="SP">SP</option>
     </select>
     ${Input({
-      class: 'input-phone',
-      placeholder: 'Telefone',
-      type:'number',
-    })}
+    class: 'input-phone',
+    placeholder: 'Telefone',
+    type: 'number',
+  })}
     ${Input({
-      class: 'input-email',
-      placeholder: 'email@exemplo.com',
-      type:'email',
-    })}
+    class: 'input-email',
+    placeholder: 'email@exemplo.com',
+    type: 'email',
+  })}
     ${Input({
-      class: 'input-password',
-      placeholder: 'Senha',
-      type:'password',
-    })}
+    class: 'input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
     <p class="error"></p>
     ${Button({
-      class: 'button-back',
-      title: 'Voltar',
-      onClick: backToLogin,
-    })}
+    class: 'button-back',
+    title: 'VOLTAR',
+    onClick: backToLogin,
+  })}
     ${Button({
-      class: 'button-continue',
-      title: 'Continuar',
-      onClick: createAccount,
-    })}
+    class: 'button-continue',
+    title: 'CONTINUAR',
+    onClick: createAccount,
+  })}
     </form>
   </section>
   `;
