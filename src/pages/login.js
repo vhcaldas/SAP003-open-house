@@ -14,18 +14,18 @@ const signIn = () => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/wrong-password') {
-        document.querySelector('.error').textContent = 'Senha Incorreta';
+        document.querySelector('.error').textContent = 'Senha Incorreta.';
       } else if (errorCode === 'auth/user-not-found') {
-        document.querySelector('.error').textContent = 'Email não registrado!';
+        document.querySelector('.error').textContent = 'E-mail não registrado.';
       } else if (errorCode === 'auth/invalid-email') {
-        document.querySelector('.error').textContent = 'Formato de email inválido';
+        document.querySelector('.error').textContent = 'Formato de email inválido.';
       }
     });
 };
 
 // Funcao ir pagina de registro - chamar no botao registar-se
 const register = () => {
-  window.location = '#Register';
+  window.location = '#register';
 }
 
 const Login = () => {
@@ -41,10 +41,10 @@ const Login = () => {
   })}
     ${Input({
 
-      class: 'input-password',
-      placeholder: 'Senha',
-      type:'password',
-    })}
+    class: 'input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
     <div class="login-buttons">
     ${Button({
     class: 'button-login',
