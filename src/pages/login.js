@@ -30,19 +30,22 @@ const register = () => {
 
 const Login = () => {
   const template = `
-  <section>
-    <img class="logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
-    <form class="form">
+  <main class="login-main">
+  <section class= "login-section">
+    <img class="login-logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
+    <form class="login-form" class="form">
     ${Input({
     class: 'input-email',
     placeholder: 'Email',
     type: 'email',
   })}
     ${Input({
-    class: 'input-password',
-    placeholder: 'Senha',
-    type: 'password',
-  })}
+
+      class: 'input-password',
+      placeholder: 'Senha',
+      type:'password',
+    })}
+    <div class="login-buttons">
     ${Button({
     class: 'button-login',
     title: 'ENTRAR',
@@ -53,9 +56,11 @@ const Login = () => {
     title: 'REGISTRAR',
     onClick: register,
   })}
+    </div>
     <p class="error"></p>
     </form>
   </section>
+  </main>
   `;
 
   return template;

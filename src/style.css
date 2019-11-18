@@ -1,8 +1,81 @@
-body{
-  background-color: coral;
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
-.logo{
+body {
+  display: flex;
+}
+
+.button-login {
+  background-color: #e0245c;
+  color: #dce3f3;
+  width: 70vw;
+  height: 5vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.button-register {
+  background-color: #e0245c;
+  color: #dce3f3;
+  width: 70vw;
+  height: 5vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.input-email {
+  border-radius: 2vw;
+  width: 70vw;
+  height: 5vh;
+  margin: 0vw 3vw 3vw 3vw;
+}
+
+.input-password {
+  border-radius: 2vw;
+  width: 70vw;
+  height: 5vh;
+  margin: 0vw 3vw 3vw 3vw;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1vw 6vw;
+}
+
+.login-logo {
   width: 200px;
   height: auto;
+  padding-bottom: 4vw;
+}
+
+.login-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to right, #04042c, #041484);
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
