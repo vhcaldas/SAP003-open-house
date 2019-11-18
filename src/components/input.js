@@ -7,19 +7,12 @@ const Input = (props) => {
     placeholder="${props.placeholder}"
     maxlength="${props.maxlength}"
     type="${props.type}" 
-     onchange="input.handleChange(event, ${props.onchange})" required>
+    id="${props.id}"
+    name="${props.name}"
+    required>
     `;
 
   return template;
-};
-
-window.input = {
-  handleChange: (event, callback) => {
-    event.preventDefault();
-    if(callback){
-      callback(event);
-    }      
-  },
 };
 
 export default Input;

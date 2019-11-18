@@ -1,8 +1,7 @@
 import Input from '../components/input.js'
 import Button from '../components/button.js'
-import Register from './register.js';
-//Funcao para fazer login
 
+//Funcao para fazer login
 const signIn = () => {
   const email = document.querySelector('.input-email').value;
   const password = document.querySelector('.input-password').value;
@@ -25,7 +24,6 @@ const signIn = () => {
 };
 
 // Funcao ir pagina de registro - chamar no botao registar-se
-
 const register = () => {
   window.location = '#Register';
 }
