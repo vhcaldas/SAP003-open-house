@@ -1,27 +1,30 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
+// import TitleOne from '../components/h-one.js';
 
 // Funcao para criar eventos
-// const createEvent = () => {
-//   const imageInput = document.querySelector('.').value;
-//   const nameInput = document.querySelector('.').value;
-//   const dateInput = document.querySelector('.').value;
-//   const addressInput = document.querySelector('.').value;
+const createEvent = () => {
+  const imageInput = document.querySelector('.input-image').value;
+  const bandNameInput = document.querySelector('.input-bandName').value;
+  const dateInput = document.querySelector('.input-date').value;
+  const timeInput = document.querySelector('.input-time').value;
+  const genresInput = document.querySelector('.genres').value;
 
-//         firebase.firestore().collection('events').add({
-//           image: imageInput,
-//           name: nameInput,
-//           data: dataInput,
-//           address: addressInput,
-//           userId: firebase.auth().currentUser.uid,
-//           addedAt: (new Date()).toLocaleString('pt-BR'),
-//         })
-//           .then(() => {
-//             imageInput.value = '';
-//             nameInput.value = '';
-//             dateInput.value = '';
-//           });
-//       };
+  firebase.firestore().collection('events').add({
+    image: imageInput,
+    bandName: bandNameInput,
+    date: dateInput,
+    time: timeInput,
+    genres: genresInput,
+    userId: firebase.auth().currentUser.uid,
+    addedAt: (new Date()).toLocaleString('pt-BR'),
+  })
+    .then(() => {
+      imageInput.value = '';
+      bandNameInput.value = '';
+      dateInput.value = '';
+    });
+};
 
 // Funcao renderizar o mapa
 // const maps = () => {
@@ -48,6 +51,11 @@ const Event = (props) => {
   <section>
   <form class="form">
   ${Input({
+    class: 'input-image',
+    placeholder: 'Insira a URL de sua imagem',
+    type: 'text',
+  })}
+  ${Input({
     class: 'input-bandName',
     placeholder: 'Nome da banda/artista',
     type: 'text',
@@ -64,7 +72,7 @@ const Event = (props) => {
     min: '00:00',
     max: '23:00',
   })}
-  <select>
+  <select class="genres">
     <option value="rock">Rock</option>
     <option value="mpb">MPB</option>
     <option value="samba">Samba</option>
@@ -91,7 +99,7 @@ const Event = (props) => {
   ${Button({
     class: 'button-continue',
     title: 'SALVAR',
-    // onClick: saveEvent,
+    onClick: createEvent,
   })}
   </form>
   </section>
@@ -102,4 +110,6 @@ const Event = (props) => {
 
 export default Event;
 
-
+// ${TitleOne({
+//   text: props.users.name,
+// })}
