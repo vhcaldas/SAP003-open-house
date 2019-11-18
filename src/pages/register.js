@@ -64,7 +64,7 @@ const zipNumber = () => {
 }
 
 const backToLogin = () => {
-  window.location = '#Login';
+  window.location = '#login';
 }
 
 const Register = () => {
