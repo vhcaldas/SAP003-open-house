@@ -6,10 +6,11 @@ const Input = (props) => {
     value="${props.value || ''}"
     placeholder="${props.placeholder}"
     maxlength="${props.maxlength}"
-    type="${props.type}" 
+    type="${props.type}"
     id="${props.id}"
-    name="${props.name}"
-    required>
+    min="${props.min}"
+    max="${props.max}" 
+      required>
     `;
 
   return template;
