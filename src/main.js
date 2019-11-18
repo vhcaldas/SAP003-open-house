@@ -7,22 +7,23 @@ import Event from './pages/event.js';
 const locationHashChanged = () => {
   switch (location.hash) {
     case '#login':
-          
-        document.querySelector('main').innerHTML = Login();
-      
+      document.querySelector('main').innerHTML = Login();
       break;
     case '#register':
-     
-     
-        document.querySelector('main').innerHTML = Register();
-      
+      document.querySelector('main').innerHTML = Register();
       break;
-    case '#home':
-    
+    case '#event':
+      // firebase
+      //   .firestore()
+      //   .collection('users').doc(firebase.auth().currentUser.uid)
+      //   .get().then((snap) => {
+      //     document.querySelector('main').innerHTML = Event({
+      //       users: snap.data()
+      //     })
+      //   })
       document.querySelector('main').innerHTML = Event();
-       
       break;
-  
+
     // default:
     //   window.location = '#login';
   }
