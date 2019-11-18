@@ -4,8 +4,8 @@ import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 
 const createAbout = () => {
-  //const priceInput = document.querySelector('.price').value;
-  //const foodInput = document.querySelector('.food').value;
+  const priceInput = document.querySelector('.price').value;
+  const foodInput = document.querySelector('.food').value;
   const notAlcoholicInput = document.querySelector('.input-not-alcoholic').value;
   const drinkInput = document.querySelector('.input-drinks').value;
   const beerInput = document.querySelector('.input-beer').value;
@@ -32,8 +32,8 @@ const createAbout = () => {
   const gospelInput = document.querySelector('.input-gospel').value;
 
   firebase.firestore().collection('profile').add({
-    //price: priceInput,
-    //food: foodInput,
+    price: priceInput,
+    food: foodInput,
     bebidaOne: notAlcoholicInput,
     bebidaTwo: drinkInput,
     bebidaThree: beerInput,
