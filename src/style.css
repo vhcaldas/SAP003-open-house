@@ -83,3 +83,74 @@ body {
 .register-main{
   color:black
 }
+
+/*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
+.header {
+  width: 100vw;
+  background-color: #322F20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #FCFCFC;
+  font-size: 15px;
+  font-weight: 50px;
+}
+
+.side-menu {
+  background-color: #322F20;
+  display: flex !important;
+  flex-direction: column;
+  position: fixed;
+  left: 0px;
+  top: -500px;
+}
+
+.toggle-side-menu {
+  opacity: 0;
+}
+
+.toggle-side-menu:checked+.side-menu {
+  top: 53px;
+  transition: all .4s linear;
+}
+
+.header-img {
+  width: 50px;
+}
+
+.header-img img {
+  width: 100%;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+.hide-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .header-title {
+    font-size: 30px;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+
+  .menu-icon {
+    visibility: hidden;
+  }
+}
+/*VAI ATÉ AQUI*/
