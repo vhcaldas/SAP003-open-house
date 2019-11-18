@@ -36,25 +36,25 @@ const Login = () => {
     <img class="logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
     <form class="form">
     ${Input({
-      class: 'input-email',
-      placeholder: 'Email',
-      type:'email',
-    })}
+    class: 'input-email',
+    placeholder: 'Email',
+    type: 'email',
+  })}
     ${Input({
-      class: 'input-password',
-      placeholder: 'Senha',
-      type:'password',
-    })}
+    class: 'input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
     ${Button({
-      class: 'button-login',
-      title: 'Entrar',
-      onClick: signIn,
-    })}
+    class: 'button-login',
+    title: 'ENTRAR',
+    onClick: signIn,
+  })}
     ${Button({
-      class: 'button-register',
-      title: 'Novo Cadastro',
-      onClick: register,
-    })}
+    class: 'button-register',
+    title: 'REGISTRAR',
+    onClick: register,
+  })}
     <p class="error"></p>
     </form>
   </section>
