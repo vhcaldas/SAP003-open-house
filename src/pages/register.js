@@ -1,5 +1,6 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
+import InputFunction from '../components/input-function.js';
 
 const createAccount = () => {
   const nameInput = document.querySelector('.input-name').value;
@@ -59,9 +60,7 @@ const zipNumber = () => {
         document.querySelector('.input-neighborhood').value = response.bairro;
         document.querySelector('.input-city').value = response.localidade;
       })
-
   }
-
 }
 
 const backToLogin = () => {
@@ -79,16 +78,17 @@ const Register = () => {
     type: 'text',
   })}
     ${Input({
-    class: 'input-CNPJ',
-    placeholder: 'CNPJ',
-    type: 'number',
-  })}
+      class: 'input-CNPJ',
+      placeholder: 'CNPJ',
+      type:'number',
+    })}
+    ${InputFunction({
+      class: 'input-CEP',
+      placeholder: 'CEP - Ex.01234567',
+      type:'number',
+      onchange: zipNumber,
+    })}
     ${Input({
-    class: 'input-CEP',
-    placeholder: 'CEP - Ex.01234567',
-    type: 'number',
-    onchange: zipNumber,
-  })}${Input({
     class: 'input-address',
     placeholder: 'Endereço - Ex.Rua/Avenida',
     type: 'text',

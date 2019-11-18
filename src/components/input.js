@@ -10,19 +10,10 @@ const Input = (props) => {
     id="${props.id}"
     min="${props.min}"
     max="${props.max}" 
-     onchange="input.handleChange(event, ${props.onchange})" required>
+      required>
     `;
 
   return template;
-};
-
-window.input = {
-  handleChange: (event, callback) => {
-    event.preventDefault();
-    if (callback) {
-      callback(event);
-    }
-  },
 };
 
 export default Input;
