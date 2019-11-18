@@ -1,56 +1,68 @@
 import Input from '../components/input.js'
-import Login from './login.js';
-// Funcao de criar conta na pagina Register - adiciona ao firebase a colecao de usuario
-// const createAccount = () => {
-//   const nameInput = document.querySelector('.').value;
-//   const cnpjInput = document.querySelector('.').value;
-//   const emailInput = document.querySelector('.').value;
-//   const cepInput = document.querySelector('.').value;
-//   const streetInput = document.querySelector('.').value;
-//   const numberInput = document.querySelector('.').value;
-//   const adjunctInput = document.querySelector('.').value;
-//   const districtInput = document.querySelector('.').value;
-//   const cityInput = document.querySelector('.').value;
-//   const passwordInput = document.querySelector('.').value;
-//   firebase
-//     .auth()
-//     .createUserWithEmailAndPassword(emailInput, passwordInput)
-//     .then(() => {
-//       firebase.firestore().collection('users').add({
-//         name: nameInput,
-//         cnpj: cnpjInput,
-//         email: emailInput,
-//         street: streetInput,
-//         number: numberInput,
-//         adjunct: adjunctInput,
-//         district: districtInput,
-//         city: cityInput,
-//         cep: cepInput,
-//         password: passwordInput,
-//         userId: firebase.auth().currentUser.uid,
-//         addedAt: (new Date()).toLocaleString('pt-BR'),
-//       })
-//     })
-//     .then(() => {
-//       window.location = '#home';
-//     })
-//     .catch((error) => {
-//       const errorCode = error.code;
-//       if (errorCode === 'auth/email-already-in-use') {
-//         document.querySelector('.error').textContent = 'E-mail já possui uma conta cadastrada!';
-//       } else if (errorCode === 'auth/invalid-email') {
-//         document.querySelector('.error').textContent = 'Formato de email inválido!';
-//       } else if (errorCode === 'auth/weak-password') {
-//         document.querySelector('.error').textContent = 'Senha deve possuir no mínimo 6 caracteres!';
-//       }
-//     });
-// };
+import Button from '../components/button.js';
 
-// Funcao para usar a API de Cep
-// const cepApi = () => {
-//   const cep = event.target.value;
+const createAccount = () => {
+  const nameInput = document.querySelector('.input-name').value;
+  const cnpjInput = document.querySelector('.input-CNPJ').value;
+  const cepInput = document.querySelector('.input-CEP').value;
+  const addressInput = document.querySelector('.input-address').value;
+  const numberInput = document.querySelector('.input-number').value;
+  const additionalInput = document.querySelector('.input-additionalAddress').value;
+  const neighborhoodInput = document.querySelector('.input-neighborhood').value;
+  const cityInput = document.querySelector('.input-city').value;
+  const phoneInput = document.querySelector('.input-phone').value;
+  const emailInput = document.querySelector('.input-email').value;
+  const passwordInput = document.querySelector('.input-password').value;
 
-// }
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(emailInput, passwordInput)
+    .then(() => {
+      firebase.firestore().collection('users').add({
+        name: nameInput,
+        cnpj: cnpjInput,
+        email: emailInput,
+        address: addressInput,
+        number: numberInput,
+        additional: additionalInput,
+        neighborhood: neighborhoodInput,
+        city: cityInput,
+        phone: phoneInput,
+        cep: cepInput,
+        password: passwordInput,
+        userId: firebase.auth().currentUser.uid,
+        addedAt: (new Date()).toLocaleString('pt-BR'),
+      })
+    })
+    .then(() => {
+      window.location = '#home';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/email-already-in-use') {
+        document.querySelector('.error').textContent = 'E-mail já possui uma conta cadastrada!';
+      } else if (errorCode === 'auth/invalid-email') {
+        document.querySelector('.error').textContent = 'Formato de email inválido!';
+      } else if (errorCode === 'auth/weak-password') {
+        document.querySelector('.error').textContent = 'Senha deve possuir no mínimo 6 caracteres!';
+      }
+    });
+};
+
+const zipNumber = () => {
+  const cep = event.target.value;
+  if(cep.length === 8){
+    fetch(`https://viacep.com.br/ws/${cep}/json`)
+    .then(response => response.json())
+    .then(response =>{
+      document.querySelector('.input-address').value=response.logradouro;
+      document.querySelector('.input-neighborhood').value=response.bairro;
+      document.querySelector('.input-city').value=response.localidade;
+    })
+
+  }
+
+}
 
 const backToLogin = () => {
   window.location='#Login';
@@ -73,8 +85,9 @@ const Register = () => {
     })}
     ${Input({
       class: 'input-CEP',
-      placeholder: 'CEP',
+      placeholder: 'CEP - Ex.01234567',
       type:'number',
+      onchange: zipNumber,
     })}${Input({
       class: 'input-address',
       placeholder: 'Endereço - Ex.Rua/Avenida',
@@ -127,6 +140,7 @@ const Register = () => {
     ${Button({
       class: 'button-continue',
       title: 'Continuar',
+      onClick: createAccount,
     })}
     </form>
   </section>
