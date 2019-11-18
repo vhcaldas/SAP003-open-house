@@ -69,6 +69,7 @@ const backToLogin = () => {
 
 const Register = () => {
   const template = `
+  <main class = "register-main">
   <section>
     <img class="logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
     <form class="form">
@@ -144,6 +145,7 @@ const Register = () => {
   })}
     </form>
   </section>
+  </main>
   `;
 
   return template;

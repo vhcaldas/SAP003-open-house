@@ -6,32 +6,39 @@ import Profile from './pages/profile.js';
 
 
 const locationHashChanged = () => {
-  switch (location.hash) {
-    case '#login':
-      document.querySelector('main').innerHTML = Login();
+  const main = document.querySelector('main');
+  firebase.auth().onAuthStateChanged(function (user) {
+    switch (location.hash) {
+      case '#login':
+        user ? window.location = '#home' : main.innerHTML = Login();
       break;
-    case '#register':
-      document.querySelector('main').innerHTML = Register();
+      case '#register':
+        main.innerHTML = Register();
       break;
-    case '#home':
-      document.querySelector('main').innerHTML = Home();
+      case '#home':
+        user ? main.innerHTML = Home() : window.location = '#login';
       break;
-    case '#profile':
-      document.querySelector('main').innerHTML = Profile();
+      case '#profile':
+        user ? main.innerHTML = Profile() : window.location = '#login';
       break;
-    case '#event':
-      firebase
-        .firestore()
-        .collection('users').doc(firebase.auth().currentUser.uid)
-        .get().then((snap) => {
-          document.querySelector('main').innerHTML = Event({
-            users: snap.data()
+      case '#event':
+        if (user){
+          firebase
+          .firestore()
+          .collection('users').doc(firebase.auth().currentUser.uid)
+          .get().then((snap) => {
+            document.querySelector('main').innerHTML = Event({
+              users: snap.data()
+            })
           })
-        })
+        } else {
+          window.location = '#login';
+        }
       break;
-    default:
-      window.location = '#login';
+      default:
+        window.location = '#login';
   }
+})
 };
 
 const init = (user) => {
