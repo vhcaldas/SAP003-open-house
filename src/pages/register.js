@@ -14,7 +14,7 @@ const createAccount = () => {
   const phoneInput = document.querySelector('.input-phone').value;
   const emailInput = document.querySelector('.input-email').value;
   const passwordInput = document.querySelector('.input-password').value;
-  if (nameInput.length > 0 && cnpjInput.length >0 && cepInput.length > 0 && numberInput.length > 0 && phoneInput.length > 0) {
+  if (nameInput.length > 0 && cnpjInput.length > 0 && cepInput.length > 0 && numberInput.length > 0 && phoneInput.length > 0) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(emailInput, passwordInput)
@@ -77,7 +77,7 @@ const Register = () => {
   <main class = "register-main">
     <div class="register-title">
       <h1 >Bem vindo ao liveinSampa!</h1>
-      <p>Informações do Estabelecimento:</p>
+      <h2>Informações do Estabelecimento:</h2>
     </div>
     <div>
       <form class="register-form" class="form">
@@ -102,7 +102,6 @@ const Register = () => {
     placeholder: 'Endereço - Ex.Rua/Avenida',
     type: 'text',
   })}
-      <div class="register-double">
         ${Input({
     class: 'input-number',
     placeholder: 'Nº',
@@ -113,13 +112,11 @@ const Register = () => {
     placeholder: 'Complemento',
     type: 'text',
   })}
-      </div>
         ${Input({
     class: 'input-neighborhood',
     placeholder: 'Bairro',
     type: 'text',
   })}
-      <div class="register-double">
         ${Input({
     class: 'input-city',
     placeholder: 'Cidade',
@@ -128,7 +125,6 @@ const Register = () => {
         <select class="input-estate">
           <option value="SP">SP</option>
         </select>
-      </div>
         ${Input({
     class: 'input-phone',
     placeholder: 'Telefone',
@@ -140,14 +136,16 @@ const Register = () => {
     placeholder: 'email@exemplo.com',
     type: 'email',
   })}
-      <p>Senha:</p>
+      <h2>Senha:</h2>
         ${Input({
     class: 'input-password',
     placeholder: 'Senha',
     type: 'password',
   })}
         <p class="error"></p>
-        ${Button({
+      </form>
+      <div class="register-buttons">
+      ${Button({
     class: 'button-back',
     title: 'VOLTAR',
     onClick: backToLogin,
@@ -157,7 +155,7 @@ const Register = () => {
     title: 'CONTINUAR',
     onClick: createAccount,
   })}
-      </form>
+      </div>
     </div>
   </main>
   `;

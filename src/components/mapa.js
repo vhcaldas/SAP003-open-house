@@ -1,19 +1,22 @@
-const Mapa = () => {
+const Mapa = (props) => {
+  const selector = props.selector;
+  selector.innerHTML = '';
   const platform = new H.service.Platform({
-    'apikey': '7o5DscZtaNdUTcuhP0bfaFbumfCTmHIoa_sx8s3XzI4'
+    'apikey': 'sejiZ454SdWnhpUHK6NmxGkP_XzhujPQxL3n6WAYvDU'
   });
   const defaultLayers = platform.createDefaultLayers();
 
   const map = new H.Map(
-    document.querySelector('.mapa'),
+    selector,
     defaultLayers.vector.normal.map,
     {
       zoom: 14,
       center: { lat: -23.5475, lng: -46.63611 }
     });
 
+  const addressInput = props.users.address + ',' + props.users.number + ' São Paulo' + ' Brazil';
   const geocodingParams = {
-    searchText: 'blabla',
+    searchText: addressInput,
   };
 
   const onResult = (result) => {
