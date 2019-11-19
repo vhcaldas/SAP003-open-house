@@ -16,8 +16,8 @@ const locationHashChanged = () => {
         main.innerHTML = Register();
         break;
       case '#about':
-        user ? main.innerHTML = About() : window.location = '#login';
-        break;
+      user ? main.innerHTML = About() : window.location = '#login';
+      break;
       case '#home':
         user ? main.innerHTML = Home() : window.location = '#login';
         break;
