@@ -370,3 +370,9 @@
   width: 340px;
   height: 150px;
 }
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
