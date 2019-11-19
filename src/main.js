@@ -19,7 +19,20 @@ const locationHashChanged = () => {
       user ? main.innerHTML = About() : window.location = '#login';
       break;
       case '#home':
-        user ? main.innerHTML = Home() : window.location = '#login';
+        // user ? main.innerHTML = Home() : window.location = '#login';   
+        if (user) {
+          firebase
+            .firestore()
+            .collection('users').doc(firebase.auth().currentUser.uid)
+            .get().then((snap) => {
+              document.querySelector('main').innerHTML =Home({
+                users: snap.data()
+              })
+            })
+        } else {
+          window.location = '#login';
+        }        
+        window.printCard();
         break;
       case '#profile':
         if (user) {

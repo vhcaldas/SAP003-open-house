@@ -22,11 +22,13 @@ const saveEvent = () => {
     userId: firebase.auth().currentUser.uid,
     addedAt: (new Date()).toLocaleString('pt-BR'),
   })
-    .then(() => {
-      imageInput.value = '';
-      bandNameInput.value = '';
-      dateInput.value = '';
-    });
+
+  document.querySelector('.input-image').value='';
+  document.querySelector('.input-bandName').value='';
+  document.querySelector('.input-date').value='';
+  document.querySelector('.input-time').value='';
+  document.querySelector('.genres').value='';
+
 };
 
 const cleanForm = () => {

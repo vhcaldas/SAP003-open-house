@@ -1,5 +1,6 @@
 import Button from '../components/button.js'
 import Paragraph from '../components/paragraph.js'
+import TitleOne from '../components/h-one.js'
 
 const logOut = () => {
   firebase.auth().signOut();
@@ -12,6 +13,37 @@ const userProfile = () => {
   window.location = '#profile';
 };
 
+function delet(){
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('events').doc(id).delete();
+  document.querySelector(`ul[data-id='${id}']`).remove();
+}
+
+const printCard = () => {
+  //const userId = firebase.auth().currentUser.uid;
+  const allEvent = firebase.firestore().collection('events');
+  allEvent.orderBy('time', 'desc').get().then(snap => {
+    let postsLayout = '';
+    snap.forEach((doc) => {  
+      postsLayout += `
+        <ul class="event-post" data-id='${doc.id}' class='post'>
+        <div class="div-img">
+        <img class="image" src="${doc.data().image}">
+        </div>
+        <div class="div-text">
+        <ul> ${doc.data().bandName} </ul>
+        <ul> ${doc.data().date} </ul>
+        <ul> ${doc.data().time} </ul>
+        <ul> ${doc.data().genres} </ul>
+        </div>
+          ${Button({class:'button', dataId: doc.id, title: 'Deletar', onClick: delet })}
+        </ul>
+        `
+    });
+    document.getElementById('post-layout').innerHTML = postsLayout; 
+  });  
+}
+
 const Home = () => {
   const template = `
   <header class='header'>
@@ -21,10 +53,8 @@ const Home = () => {
     </label>
     ${Paragraph({
       class: 'my-home',
-      text: 'HOME',
+      text: 'EVENTOS',
     })}
-    <div class='header-img'>
-    </div>
   </div>
     <input 
       type='checkbox'
@@ -46,6 +76,9 @@ const Home = () => {
   })}
     </div>
   </header>
+  <main class="print-event">
+  <ul id='post-layout'></ul>
+  </main>
   <footer class="footer">
     <div class='menu-icon'></div>
     ${Button({
@@ -58,6 +91,8 @@ const Home = () => {
   `;
   return template;
 }
+
+ window.printCard = printCard;
 
 export default Home;
 
