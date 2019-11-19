@@ -1,68 +1,59 @@
-import Button from '../components/button.js'// //Funcao ir para pagina de criar evento
+import Button from '../components/button.js'
 
 const logOut = () => {
   firebase.auth().signOut();
 }
-const myEvents = () => {
+const userEvents = () => {
   window.location = '#event';
 }
 
-const myProfile = () => {
+const userProfile = () => {
   window.location = '#profile';
 };
 
 function Home() {
   const template = `
   <header class='header'>
-  ${Button({
-    type: 'button',
-    class: 'btn profile-btn hide-mobile',
-    dataId: 'btn-profile',
-    onClick: myEvents,
-    title: 'MEUS EVENTOS',
-  })}
   <div class='header-title'>
-  <label for='toggle-side-menu'>
-  <div class='fa fa-bars hide-desktop menu-icon'></div>
-  </label>
-  <p> liveinSampa </p> 
-  <div class='header-img'>
-  <img src="./images/logo.png">
+    <label for='toggle-side-menu'>
+      <div class='fas fa-ellipsis-v'></div>
+    </label>
+    <div class='header-img'>
+    </div>
   </div>
-  </div>
-    ${Button({
-    type: 'button',
-    class: 'btn logout-btn hide-mobile',
-    id: 'btn-log-out',
-    onClick: logOut,
-    title: 'SAIR'
-  })}
     <input 
       type='checkbox'
       id='toggle-side-menu' 
-      class='toggle-side-menu hide-desktop'
+      class='toggle-side-menu'
     />
     <div class='side-menu hide-desktop'>
     ${Button({
     type: 'button',
     class: 'btn profile-btn ',
-    dataId: 'btn-profile',
-    onClick: myEvents,
+    onClick: userEvents,
     title: 'MEUS EVENTOS',
   })}
     ${Button({
     type: 'button',
     class: 'btn logout-btn ',
-    dataId: 'btn-log-out',
     onClick: logOut,
     title: 'SAIR'
   })}
     </div>
-    </header>
+  </header>
     <div class='profile'></div>
-      <section id="printpost" class="print-post">
+    <section id="printpost" class="print-post">
       <ul class='post-list'></ul>
-      </section>
+    </section>
+  <footer class="footer">
+    <div class='menu-icon'></div>
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn fas fa-user menu-icon',
+    onClick: userProfile,
+    title: '',
+  })}
+  </footer>
   `;
   return template;
 }
