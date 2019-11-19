@@ -2,9 +2,9 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  margin: 0;
-}
+/* body {
+   margin: 0;
+} */
 
 .button-login {
   background-color: #e0245c;
@@ -57,7 +57,6 @@ body {
   border: none;
   cursor: pointer;
 }
-
 
 .error {
   color: #dce3f3;
@@ -237,8 +236,11 @@ body {
 }
 
 /*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
+
 .header {
-  width: 100%;
+  margin-left: -2%;
+  margin-top: -2%;
+  width: 102%;
   height: 50%;
   background-color: #041484;
   display: flex;
@@ -252,8 +254,8 @@ body {
 }
 
 /*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
+
 .header {
-  width: 100vw;
   height: auto;
   background-color: #041484;
   display: flex;
@@ -271,11 +273,10 @@ body {
 }
 
 .side-menu {
-  background-color: #041484;
+  background-color: #E0245C;
   display: flex !important;
   flex-direction: column;
   position: fixed;
-  left: 0px;
   top: -500px;
 }
 
@@ -284,6 +285,7 @@ body {
 }
 
 .toggle-side-menu:checked+.side-menu {
+  width: 98%;
   top: 53px;
   transition: all .4s linear;
 }
@@ -312,6 +314,9 @@ body {
   font-size: 25px;
 }
 
+.menu-options {
+  color: #DCE3F3;
+}
 .event-post {
   display: flex;
   flex-direction: row;
@@ -335,7 +340,6 @@ body {
   .header-title {
     font-size: 30px;
   }
-
   .hide-mobile {
     display: block;
   }
@@ -352,7 +356,6 @@ body {
   color: #edf1f4;
   padding: 2vw;
   width: 100vw;
-
 }
 
 .about-title {
@@ -360,4 +363,10 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.mapa {
+  border: 1px solid black;
+  width: 340px;
+  height: 150px;
 }

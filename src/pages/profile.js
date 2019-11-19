@@ -38,15 +38,15 @@ const Profile = (props) => {
   const template = `
   <header class='header'>
   <div class='header-title'>
+  <div>
     <label for='toggle-side-menu'>
-      <div class='fas fa-ellipsis-v'></div>
+      <div class='fas fa-bars'></div>
     </label>
     ${Paragraph({
     class: 'my-event',
     text: props.users.name,
   })}
-    <div class='header-img'>
-    </div>
+  </div>
   </div>
     <input 
       type='checkbox'
@@ -56,19 +56,19 @@ const Profile = (props) => {
     <div class='side-menu hide-desktop'>
     ${Button({
     type: 'button',
-    class: 'btn profile-btn ',
+    class: 'btn profile-btn menu-options',
     onClick: userHome,
     title: 'HOME',
   })}
     ${Button({
     type: 'button',
-    class: 'btn profile-btn ',
+    class: 'btn profile-btn menu-options',
     onClick: userEvents,
     title: 'MEUS EVENTOS',
   })}
     ${Button({
-    type: 'button',
-    class: 'btn logout-btn ',
+     type: 'button',
+    class: 'btn logout-btn menu-options',
     onClick: logOut,
     title: 'SAIR'
   })}
@@ -81,9 +81,9 @@ const Profile = (props) => {
   })}
   ${Paragraph({
     class: 'my-address',
-    text: props.users.address + ', ' + props.users.number + ', ' + props.users.city,
+    text: props.users.address + ', ' + props.users.number + ', ' + props.users.neighborhood + ', ' + props.users.city +'.',
   })}
-  <div style="width: 340px; height: 150px" class='mapa'></div>
+  <div class='mapa'></div>
   ${TitleTwo({
     class: 'my-local',
     text: 'Meu Estabelecimento',
