@@ -60,6 +60,7 @@ body {
 
 .error {
   color: #dce3f3;
+  text-align:center;
 }
 
 .input-address{
