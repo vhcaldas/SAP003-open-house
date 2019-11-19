@@ -20,7 +20,7 @@ function delet(){
 }
 
 const printCard = () => {
-  //const userId = firebase.auth().currentUser.uid;
+  const userId = firebase.auth().currentUser.uid;
   const allEvent = firebase.firestore().collection('events');
   allEvent.orderBy('time', 'desc').get().then(snap => {
     let postsLayout = '';
@@ -35,10 +35,13 @@ const printCard = () => {
         <ul> ${doc.data().date} </ul>
         <ul> ${doc.data().time} </ul>
         <ul> ${doc.data().genres} </ul>
-        </div>
-          ${Button({class:'button', dataId: doc.id, title: 'Deletar', onClick: delet })}
-        </ul>
-        `
+        </div>`
+        if(userId === doc.data().userId){
+          postsLayout += `
+          ${Button({class:'btn-delete fas fa-trash', dataId: doc.id, title: '', onClick: delet })}</ul>`
+        }else{
+          postsLayout += `</ul>`
+        }
     });
     document.getElementById('post-layout').innerHTML = postsLayout; 
   });  
@@ -76,8 +79,8 @@ const Home = () => {
   })}
     </div>
   </header>
-  <main class="print-event">
-  <ul id='post-layout'></ul>
+  <main class='print-event'>
+  <ul class='post-layout' id='post-layout'></ul>
   </main>
   <footer class="footer">
     <div class='menu-icon'></div>
