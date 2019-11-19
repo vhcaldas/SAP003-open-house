@@ -32,6 +32,32 @@ body {
   cursor: pointer;
 }
 
+.button-back {
+  background-color: #04042c;
+  color: #dce3f3;
+  width: 35vw;
+  height: 10vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.button-continue{
+  background-color: #e0245c;
+  color: #dce3f3;
+  width: 35vw;
+  height: 10vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
 .error {
   color: #dce3f3;
 }
@@ -45,11 +71,11 @@ body {
 }
 
 .input-additionalAddress  {
-  width: 70vw;
   border-radius: 2vw;
+  width: 70vw;
   height: 4vh;
-  /* margin: 0vw 12vw 1vw 3vw;
-  padding: 1vw; */
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
 }
 
 .input-CEP{
@@ -61,9 +87,9 @@ body {
 }
 
 .input-city{
-  width: 70vw;
-  height: 5vh;
   border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
   margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
 }
@@ -79,13 +105,15 @@ body {
 .input-email {
   border-radius: 2vw;
   width: 70vw;
-  height: 5vh;
-  margin: 0vw 3vw 3vw 3vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
 }
 
 .input-estate {
   border-radius: 2vw;
+  width: 72vw;
+  height: 6vh;
   margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
 }
@@ -112,14 +140,13 @@ body {
   height: 4vh;
   margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
-  width: 10vw;
 }
 
 .input-password {
   border-radius: 2vw;
   width: 70vw;
-  height: 5vh;
-  margin: 0vw 3vw 3vw 3vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
 }
 
@@ -169,29 +196,28 @@ x'
 .register-main{
   color:black
 }
+.register-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
 
 .register-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 1vw 6vw 1vw 6vw;
-  text-align: center;
+  align-items: center;
 }
 
 .register-main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(to bottom, #2c54b3, #041484);
-  height: 100vh;
   width: 100vw; 
   color: #edf1f4;
-  padding: 4vw;
-}
-
-.register-double{
-  display: flex;
-  flex-direction: row;
+  padding-top:4vw;
 }
 
 .register-title {
@@ -199,6 +225,13 @@ x'
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.register-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
