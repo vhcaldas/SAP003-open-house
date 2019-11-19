@@ -169,7 +169,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-x'
 }
 
 .login-logo {
@@ -241,8 +240,23 @@ x'
   height: 50%;
   background-color:#041484;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+}
+
+.post{
+  background-color: #2c54b3;
+  width: 100%; 
+}
+
+/*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
+.header {
+  width: 100vw;
+    height: auto;
+    background-color: #041484;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
 .header-title {
@@ -294,6 +308,26 @@ x'
 .fa-user:before {
   content: "\f007";
   font-size: 25px;
+}
+
+.event-post{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+}
+.image{
+  width: 50%;
+  height: auto;
+}
+
+.div-img{
+  display: flex;
+  align-items: center;
+}
+
+.div-text{
+
 }
 
 @media only screen and (min-width: 576px) {
