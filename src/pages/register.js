@@ -19,7 +19,9 @@ const createAccount = () => {
     .auth()
     .createUserWithEmailAndPassword(emailInput, passwordInput)
     .then(() => {
-      firebase.firestore().collection('users').add({
+      firebase.firestore().collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .set({
         name: nameInput,
         cnpj: cnpjInput,
         email: emailInput,
@@ -36,7 +38,7 @@ const createAccount = () => {
       })
     })
     .then(() => {
-      window.location = '#home';
+      window.location = '#about';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -70,81 +72,90 @@ const backToLogin = () => {
 const Register = () => {
   const template = `
   <main class = "register-main">
-  <section>
-    
-    <form class="form">
-    ${Input({
-    class: 'input-name',
-    placeholder: 'Nome do estabelecimento',
-    type: 'text',
-  })}
-    ${Input({
-      class: 'input-CNPJ',
-      placeholder: 'CNPJ',
-      type:'number',
-    })}
-    ${InputFunction({
-      class: 'input-CEP',
-      placeholder: 'CEP - Ex.01234567',
-      type:'number',
-      onchange: zipNumber,
-    })}
-    ${Input({
-    class: 'input-address',
-    placeholder: 'Endereço - Ex.Rua/Avenida',
-    type: 'text',
-  })}
-    ${Input({
-    class: 'input-number',
-    placeholder: 'Nº',
-    type: 'number',
-  })}
-    ${Input({
-    class: 'input-additionalAddress',
-    placeholder: 'Complemento',
-    type: 'text',
-  })}
-    ${Input({
-    class: 'input-neighborhood',
-    placeholder: 'Bairro',
-    type: 'text',
-  })}
-    ${Input({
-    class: 'input-city',
-    placeholder: 'Cidade',
-    type: 'text',
-  })}
-    <select>
-      <option value="SP">SP</option>
-    </select>
-    ${Input({
-    class: 'input-phone',
-    placeholder: 'Telefone',
-    type: 'number',
-  })}
-    ${Input({
-    class: 'input-email',
-    placeholder: 'email@exemplo.com',
-    type: 'email',
-  })}
-    ${Input({
-    class: 'input-password',
-    placeholder: 'Senha',
-    type: 'password',
-  })}
-    <p class="error"></p>
-    ${Button({
-    class: 'button-back',
-    title: 'VOLTAR',
-    onClick: backToLogin,
-  })}
-    ${Button({
-    class: 'button-continue',
-    title: 'CONTINUAR',
-    onClick: createAccount,
-  })}
-    </form>
-  </section>
+    <div class="register-title">
+      <h1 >Bem vindo ao liveinSampa!</h1>
+      <p>Informações do Estabelecimento:</p>
+    </div>
+    <div>
+      <form class="register-form" class="form">
+        ${Input({
+        class: 'input-name',
+        placeholder: 'Nome do estabelecimento',
+        type: 'text',
+      })}
+        ${Input({
+        class: 'input-CNPJ',
+        placeholder: 'CNPJ',
+        type: 'number',
+      })}
+        ${InputFunction({
+        class: 'input-CEP',
+        placeholder: 'CEP - Ex.01234567',
+        type: 'number',
+        onchange: zipNumber,
+      })}
+        ${Input({
+        class: 'input-address',
+        placeholder: 'Endereço - Ex.Rua/Avenida',
+        type: 'text',
+      })}
+      <div class="register-double">
+        ${Input({
+        class: 'input-number',
+        placeholder: 'Nº',
+        type: 'number',
+      })}
+        ${Input({
+        class: 'input-additionalAddress',
+        placeholder: 'Complemento',
+        type: 'text',
+      })}
+      </div>
+        ${Input({
+        class: 'input-neighborhood',
+        placeholder: 'Bairro',
+        type: 'text',
+      })}
+      <div class="register-double">
+        ${Input({
+        class: 'input-city',
+        placeholder: 'Cidade',
+        type: 'text',
+      })}
+        <select class="input-estate">
+          <option value="SP">SP</option>
+        </select>
+      </div>
+        ${Input({
+        class: 'input-phone',
+        placeholder: 'Telefone',
+        type: 'number',
+      })}
+      <h2>Dados de Acesso:</h2>
+        ${Input({
+        class: 'input-email',
+        placeholder: 'email@exemplo.com',
+        type: 'email',
+      })}
+      <p>Senha:</p>
+        ${Input({
+        class: 'input-password',
+        placeholder: 'Senha',
+        type: 'password',
+      })}
+        <p class="error"></p>
+        ${Button({
+        class: 'button-back',
+        title: 'VOLTAR',
+        onClick: backToLogin,
+      })}
+        ${Button({
+        class: 'button-continue',
+        title: 'CONTINUAR',
+        onClick: createAccount,
+      })}
+      </form>
+    </div>
   </main>
   `;
 
