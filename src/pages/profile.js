@@ -1,28 +1,56 @@
+import Button from '../components/button.js'
 
-// Funcao para ir pra eventos
-// const goEvent = () => {
-//   window.location = '#event';
-// };
+const logOut = () => {
+  firebase.auth().signOut();
+}
+const userEvents = () => {
+  window.location = '#event';
+}
 
-// Funcao para ir pra home
-// const goHome = () => {
-//   window.location = '#home';
-// };
-
-// Funcao para fazer LogOut
-// const goOut = () => {
-//   firebase.auth().signOut();
-// }
+const userHome = () => {
+  window.location = '#home';
+}
 
 const Profile = () => {
   const template = `
-  <section>
-   
-  
-  </section>
+  <header class='header'>
+  <div class='header-title'>
+    <label for='toggle-side-menu'>
+      <div class='fas fa-ellipsis-v'></div>
+    </label>
+    <div class='header-img'>
+    </div>
+  </div>
+    <input 
+      type='checkbox'
+      id='toggle-side-menu' 
+      class='toggle-side-menu'
+    />
+    <div class='side-menu hide-desktop'>
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn ',
+    onClick: userHome,
+    title: 'HOME',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn ',
+    onClick: userEvents,
+    title: 'MEUS EVENTOS',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn ',
+    onClick: logOut,
+    title: 'SAIR'
+  })}
+    </div>
+  </header>
+  <footer class="footer">
+  </footer>
   `;
-
   return template;
-};
+}
 
 export default Profile;
