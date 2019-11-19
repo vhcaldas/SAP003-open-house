@@ -6,8 +6,6 @@ import Profile from './pages/profile.js';
 import About from './pages/about.js';
 import Mapa from './components/mapa.js';
 
-
-
 const locationHashChanged = () => {
   const main = document.querySelector('main');
   firebase.auth().onAuthStateChanged(function (user) {
@@ -19,8 +17,8 @@ const locationHashChanged = () => {
         main.innerHTML = Register();
         break;
       case '#about':
-      user ? main.innerHTML = About() : window.location = '#login';
-      break;
+        user ? main.innerHTML = About() : window.location = '#login';
+        break;
       case '#home':
         user ? main.innerHTML = Home() : window.location = '#login';
         break;
