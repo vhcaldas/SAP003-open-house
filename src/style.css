@@ -3,7 +3,7 @@
 }
 
 body {
-  display: flex;
+   margin: 0;
 }
 
 .button-login {
@@ -306,3 +306,21 @@ x'
   }
 }
 /*VAI ATÉ AQUI*/
+
+/* css about page */
+
+.about-main{
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #2c54b3, #041484);
+  color: #edf1f4;
+  padding: 2vw;
+  width: 100vw;
+
+}
+.about-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}

@@ -9,7 +9,7 @@ const createAbout = () => {
 
   const drinks = [];
   document.querySelectorAll('input[name=drinks]:checked').forEach((elem) => {
-    drinks.push(elem.value);
+    drinks.push(elem.value);  
   })
 
   const features = [];
@@ -42,218 +42,228 @@ const backToRegister = () => {
 
 const About = () => {
   const template = `
-  <section>
+  <main class="about-main">
+  <div class="about-title">
+      
   ${TitleOne({
-    text: 'Conte um pouco sobre o seu local:'
+        text: 'Conte um pouco sobre o seu local:'
   })}
+  </div>
   <form class='form'>
   ${TitleTwo({
-    text: 'Gasto médio por pessoa:'
+       text: 'Gasto médio por pessoa:'
+    
   })}
     <label>
-    ${Input({
+    <div>
+    <ul>${Input({
     name: 'price',
     value: '$',
     class: 'input-price',
     type: 'radio',
-  })} 
-      Até R$ 50
+     })} 
+     Até R$ 50 </ul>
     </label>
     <label>
-    ${Input({
+    <ul> ${Input({
     name: 'price',
     value: '$$',
     class: 'input-price',
     type: 'radio',
   })} 
-      Até R$ 50 a 100
+     Até R$ 50 a 100</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'price',
     value: '$$$',
     class: 'input-price',
     type: 'radio',
   })} 
-      Até R$ 100 a 150
+      Até R$ 100 a 150 </ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'price',
     value: '$$$$',
     class: 'input-price',
     type: 'radio',
   })} 
-      + R$ 150
+       + R$ 150</ul>
     </label>
+    </div>
     ${TitleTwo({
     text: 'Conte um pouco sobre o seu local:'
   })}
+  
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'food',
     value: 'Meat',
     class: 'input-food',
     type: 'radio',
   })} 
-      Sem opções veggies
+      Sem opções veggies</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'food',
     value: 'Veggies',
     class: 'input-food',
     type: 'radio',
   })} 
-      Opções veggies
+      Opções veggies</ul>
     </label>
     ${TitleTwo({
     text: 'Opções de bebidas:'
   })}
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'drinks',
     value: 'Não alcóolicos',
     class: 'input-not-alcoholic',
     type: 'checkbox',
   })} 
-      Não alcóolicos
+      Não alcóolicos</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'drinks',
     value: 'Drinks',
     class: 'input-drinks',
     type: 'checkbox',
   })} 
-      Drinks
+      Drinks</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'drinks',
     value: 'Cerveja',
     class: 'input-beer',
     type: 'checkbox',
   })} 
-      Cerveja
+      Cerveja</ul>
     </label>
     ${TitleTwo({
     text: 'Público da casa:'
   })}
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'features',
     value: 'LGBTQ+',
     class: 'input-lgbtq',
     type: 'checkbox',
   })} 
-      LGBTQ+
+      LGBTQ+</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'features',
     value: 'Bebês/Criança',
     class: 'input-children',
     type: 'checkbox',
   })} 
-      Bebês/Criança
+      Bebês/Criança</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'features',
     value: 'Acessibilidade',
     class: 'input-accessibility',
     type: 'checkbox',
   })} 
-      Acessibilidade
+      Acessibilidade</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     name: 'features',
     value: 'Pet Friendly',
     class: 'input-pet',
     type: 'checkbox',
   })} 
-      Pet Friendly
+      Pet Friendly</ul>
     </label>
     ${TitleTwo({
     text: 'Gênero musical:'
   })}
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'Rock',
     name: 'genre',
     class: 'input-rock',
     type: 'checkbox',
   })} 
-     Rock
+     Rock</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'MPB',
     name: 'genre',
     class: 'input-mpb',
     type: 'checkbox',
   })} 
-      MPB
+      MPB</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'Samba',
     name: 'genre',
     class: 'input-samba',
     type: 'checkbox',
   })} 
-      Samba
+      Samba</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'Sertanejo',
     name: 'genre',
     class: 'input-sertanejo',
     type: 'checkbox',
   })} 
-      Sertanejo
+      Sertanejo</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'Forró',
     name: 'genre',
     class: 'input-forro',
     type: 'checkbox',
   })} 
-      Forró
+      Forró</ul>
     </label>
     <label>
-     ${Input({
+    <ul>${Input({
     value: 'Pagode',
     name: 'genre',
     class: 'input-pagode',
     type: 'checkbox',
   })} 
-      Pagode
+      Pagode</ul>
     </label>
     <label>
-    ${Input({
+    <ul>${Input({
     value: 'Pop',
     name: 'genre',
     class: 'input-pop',
     type: 'checkbox',
   })} 
-      POP
+      POP</ul>
     </label>  
-    ${Button({
-    class: 'button-back',
-    title: 'Voltar',
-    onClick: backToRegister,
-  })}
-    ${Button({
-    class: 'button-continue',
-    title: 'Continuar',
-    onClick: createAbout,
-  })}
-      </form>
-    </section>
+        </form>
+        <div class="register-buttons">
+        ${Button({
+          class: 'button-back',
+          title: 'Voltar',
+          onClick: backToRegister,
+        })}
+          ${Button({
+          class: 'button-continue',
+          title: 'Continuar',
+          onClick: createAbout,
+          
+        })}
+        </div>
+    </main>
     `
   return template;
 };
