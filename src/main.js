@@ -4,6 +4,9 @@ import Home from './pages/home.js';
 import Event from './pages/event.js';
 import Profile from './pages/profile.js';
 import About from './pages/about.js';
+import Mapa from './components/mapa.js';
+
+
 
 const locationHashChanged = () => {
   const main = document.querySelector('main');
@@ -30,6 +33,10 @@ const locationHashChanged = () => {
               document.querySelector('main').innerHTML = Profile({
                 users: snap.data()
               })
+              Mapa({
+                selector: document.querySelector('.mapa'),
+                users: snap.data(),
+              });
             })
         } else {
           window.location = '#login';
@@ -57,3 +64,4 @@ const locationHashChanged = () => {
 
 window.addEventListener('hashchange', locationHashChanged, false);
 window.addEventListener('load', locationHashChanged, false);
+window.Mapa = Mapa;
