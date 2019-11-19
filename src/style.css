@@ -31,6 +31,33 @@ body {
   border: none;
   cursor: pointer;
 }
+.button-back {
+  background-color: #04042c;
+  color: #dce3f3;
+  width: 35vw;
+  height: 10vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.button-continue{
+  background-color: #e0245c;
+  color: #dce3f3;
+  width: 35vw;
+  height: 10vh;
+  margin: 0vw 3vw 3vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+
 .error {
   color: #dce3f3;
   text-align:center;
