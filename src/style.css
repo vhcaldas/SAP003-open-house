@@ -253,6 +253,10 @@
   width: 100%;
 }
 
+.post-layout{
+  padding: 3vw;
+}
+
 /*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
 
 .header {
@@ -322,11 +326,17 @@
   flex-direction: row;
   align-items: center;
   padding: 0;
+  height: 20vh;
+  border: black;
+  padding: 10px;
+  box-shadow: 5px 4px 5px #888888;
+  border-radius: 8px;
 }
 
 .image {
   width: 50%;
   height: auto;
+  width: 30vw;
 }
 
 .div-img {
@@ -334,7 +344,19 @@
   align-items: center;
 }
 
-.div-text {}
+.div-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-delete{
+  display: flex;
+  justify-content: baseline;
+  align-self: flex-end;
+  background: transparent;
+  border: transparent;
+}
 
 @media only screen and (min-width: 576px) {
   .header-title {
