@@ -51,13 +51,15 @@ const Home = () => {
   const template = `
   <header class='header'>
   <div class='header-title'>
+  <div>
     <label for='toggle-side-menu'>
-      <div class='fas fa-ellipsis-v'></div>
+      <div class='fas fa-bars'></div>
     </label>
     ${Paragraph({
       class: 'my-home',
       text: 'EVENTOS',
     })}
+    </div>
   </div>
     <input 
       type='checkbox'
@@ -67,13 +69,13 @@ const Home = () => {
     <div class='side-menu hide-desktop'>
     ${Button({
     type: 'button',
-    class: 'btn profile-btn ',
+    class: 'btn profile-btn menu-options',
     onClick: userEvents,
     title: 'MEUS EVENTOS',
   })}
     ${Button({
     type: 'button',
-    class: 'btn logout-btn ',
+    class: 'btn logout-btn menu-options',
     onClick: logOut,
     title: 'SAIR'
   })}
