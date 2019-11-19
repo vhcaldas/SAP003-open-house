@@ -3,7 +3,7 @@ import Button from '../components/button.js';
 // import TitleOne from '../components/h-one.js';
 
 // Funcao para criar eventos
-const createEvent = () => {
+const saveEvent = () => {
   const imageInput = document.querySelector('.input-image').value;
   const bandNameInput = document.querySelector('.input-bandName').value;
   const dateInput = document.querySelector('.input-date').value;
@@ -35,22 +35,19 @@ const cleanForm = () => {
 // 
 // }
 
-//Para sair
-// const logOut = () => {
-//   firebase.auth().signOut();
-// }
+const logOut = () => {
+  firebase.auth().signOut();
+}
 
-//Ir para home
-// const userHome = () => {
-//   window.location = '#home';
-// }
+const userHome = () => {
+  window.location = '#home';
+}
 
-//Ir para o perfil
-// const userProfile = () => {
-//   window.location = '#profile';
-// };
+const userProfile = () => {
+  window.location = '#profile';
+};
 
-const Event = (props) => {
+const createEvent = (props) => {
   const template = `
   <section>
   <form class="form">
@@ -91,7 +88,7 @@ const Event = (props) => {
   ${Button({
     class: 'button-continue',
     title: 'SALVAR',
-    onClick: createEvent,
+    onClick: saveEvent,
   })}
   </form>
   </section>
@@ -99,6 +96,50 @@ const Event = (props) => {
  `;
   return template;
 };
+
+const Event = () => {
+  const template = `
+  <header class='header'>
+  <div class='header-title'>
+    <label for='toggle-side-menu'>
+      <div class='fas fa-ellipsis-v'></div>
+    </label>
+    <div class='header-img'>
+    </div>
+  </div>
+    <input 
+      type='checkbox'
+      id='toggle-side-menu' 
+      class='toggle-side-menu'
+    />
+    <div class='side-menu hide-desktop'>
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn ',
+    onClick: userHome,
+    title: 'HOME',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn ',
+    onClick: logOut,
+    title: 'SAIR'
+  })}
+    </div>
+  </header>
+    <section id="create-event" class="create-event">${createEvent()}</section>
+  <footer class="footer">
+    <div class='menu-icon'></div>
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn fas fa-user menu-icon',
+    onClick: userProfile,
+    title: '',
+  })}
+  </footer>
+  `;
+  return template;
+}
 
 export default Event;
 

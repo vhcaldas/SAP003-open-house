@@ -11,7 +11,7 @@ const userProfile = () => {
   window.location = '#profile';
 };
 
-function Home() {
+const Home = () => {
   const template = `
   <header class='header'>
   <div class='header-title'>
@@ -41,10 +41,6 @@ function Home() {
   })}
     </div>
   </header>
-    <div class='profile'></div>
-    <section id="printpost" class="print-post">
-      <ul class='post-list'></ul>
-    </section>
   <footer class="footer">
     <div class='menu-icon'></div>
     ${Button({
