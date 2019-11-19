@@ -1,6 +1,6 @@
 * {
   font-family: 'Roboto', sans-serif;
-  margin:0;
+
 }
 
 .button-login {
@@ -181,6 +181,7 @@
   background-image: linear-gradient(to right, #04042c, #041484);
   width: 100vw;
   height: 100vh;
+  margin: 0;
 }
 
 .login-section {
