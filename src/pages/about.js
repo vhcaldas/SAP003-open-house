@@ -4,61 +4,31 @@ import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 
 const createAbout = () => {
-  const priceInput = document.querySelector('.price').value;
-  const foodInput = document.querySelector('.food').value;
-  const notAlcoholicInput = document.querySelector('.input-not-alcoholic').value;
-  const drinkInput = document.querySelector('.input-drinks').value;
-  const beerInput = document.querySelector('.input-beer').value;
-  const lgbtInput = document.querySelector('.input-lgbtq').value;
-  const childrenInput = document.querySelector('.input-children').value;
-  const accessibilityInput = document.querySelector('.input-accessibility').value;
-  const petInput = document.querySelector('.input-pet').value;
-  const rockInput = document.querySelector('.input-rock').value;
-  const mpbInput = document.querySelector('.input-mpb').value;
-  const sambaInput = document.querySelector('.input-samba').value;
-  const sertanejoInput = document.querySelector('.input-sertanejo').value;
-  const forroInput = document.querySelector('.input-forro').value;
-  const pagodeInput = document.querySelector('.input-pagode').value;
-  const jazzInput = document.querySelector('.input-jazz').value;
-  const bluesInput = document.querySelector('.input-blues').value;
-  const funkInput = document.querySelector('.input-funk').value;
-  const hiphopInput = document.querySelector('.input-hiphop').value;
-  const reggaeInput = document.querySelector('.input-reggae').value;
-  const folkInput = document.querySelector('.input-folk').value;
-  const alternativatInput = document.querySelector('.input-alternativa').value;
-  const salsaInput = document.querySelector('.input-salsa').value;
-  const flashbackInput = document.querySelector('.input-flashback').value;
-  const popInput = document.querySelector('.input-pop').value;
-  const gospelInput = document.querySelector('.input-gospel').value;
+  const priceInput = document.querySelector('input[name=price]:checked').value;
+  const foodInput = document.querySelector('input[name=food]:checked').value;
+
+  const drinks = [];
+  document.querySelectorAll('input[name=drinks]:checked').forEach((elem) => {
+    drinks.push(elem.value);
+  })
+
+  const features = [];
+  document.querySelectorAll('input[name=features]:checked').forEach((elem) => {
+    features.push(elem.value);
+  })
+
+  const genre = [];
+  document.querySelectorAll('input[name=genre]:checked').forEach((elem) => {
+    genre.push(elem.value);
+  })
 
   firebase.firestore().collection('profile').add({
     price: priceInput,
     food: foodInput,
-    bebidaOne: notAlcoholicInput,
-    bebidaTwo: drinkInput,
-    bebidaThree: beerInput,
-    lgbt: lgbtInput,
-    children: childrenInput,
-    accessibility: accessibilityInput,
-    pet: petInput,
-    rock: rockInput,
-    mpb: mpbInput,
-    samba: sambaInput,
-    sertanejo: sertanejoInput,
-    forro: forroInput,
-    pagode: pagodeInput,
-    jazz: jazzInput,
-    blues: bluesInput,
-    funk: funkInput,
-    hiphop: hiphopInput,
-    reggae: reggaeInput,
-    folk: folkInput,
-    alternativa: alternativatInput,
-    salsa: salsaInput,
-    flashback: flashbackInput,
-    pop: popInput,
-    gospel: gospelInput,
-    //userId: firebase.auth().currentUser.uid,
+    drinks: drinks,
+    features: features,
+    music: genre,
+    userId: firebase.auth().currentUser.uid,
     addedAt: (new Date()).toLocaleString('pt-BR'),
   })
     .then(() => {
@@ -67,7 +37,7 @@ const createAbout = () => {
 }
 
 const backToRegister = () => {
-  window.location = '#Register';
+  window.location = '#register';
 }
 
 const About = () => {
@@ -80,9 +50,9 @@ const About = () => {
   ${TitleTwo({
     text: 'Gasto médio por pessoa:'
   })}
-  <div class='price'>
     <label>
     ${Input({
+    name: 'price',
     value: '$',
     class: 'input-price',
     type: 'radio',
@@ -91,6 +61,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'price',
     value: '$$',
     class: 'input-price',
     type: 'radio',
@@ -99,6 +70,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'price',
     value: '$$$',
     class: 'input-price',
     type: 'radio',
@@ -107,39 +79,40 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'price',
     value: '$$$$',
     class: 'input-price',
     type: 'radio',
   })} 
       + R$ 150
     </label>
-    </div>
     ${TitleTwo({
     text: 'Conte um pouco sobre o seu local:'
   })}
-    <div class='food'>
     <label>
     ${Input({
+    name: 'food',
     value: 'Meat',
-    class: 'input-meat',
+    class: 'input-food',
     type: 'radio',
   })} 
       Sem opções veggies
     </label>
     <label>
     ${Input({
+    name: 'food',
     value: 'Veggies',
-    class: 'input-veggies',
+    class: 'input-food',
     type: 'radio',
   })} 
       Opções veggies
     </label>
-    </div>
     ${TitleTwo({
     text: 'Opções de bebidas:'
   })}
     <label>
     ${Input({
+    name: 'drinks',
     value: 'Não alcóolicos',
     class: 'input-not-alcoholic',
     type: 'checkbox',
@@ -148,6 +121,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'drinks',
     value: 'Drinks',
     class: 'input-drinks',
     type: 'checkbox',
@@ -156,6 +130,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'drinks',
     value: 'Cerveja',
     class: 'input-beer',
     type: 'checkbox',
@@ -167,6 +142,7 @@ const About = () => {
   })}
     <label>
     ${Input({
+    name: 'features',
     value: 'LGBTQ+',
     class: 'input-lgbtq',
     type: 'checkbox',
@@ -175,6 +151,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'features',
     value: 'Bebês/Criança',
     class: 'input-children',
     type: 'checkbox',
@@ -183,6 +160,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'features',
     value: 'Acessibilidade',
     class: 'input-accessibility',
     type: 'checkbox',
@@ -191,6 +169,7 @@ const About = () => {
     </label>
     <label>
     ${Input({
+    name: 'features',
     value: 'Pet Friendly',
     class: 'input-pet',
     type: 'checkbox',
@@ -203,6 +182,7 @@ const About = () => {
     <label>
     ${Input({
     value: 'Rock',
+    name: 'genre',
     class: 'input-rock',
     type: 'checkbox',
   })} 
@@ -211,6 +191,7 @@ const About = () => {
     <label>
     ${Input({
     value: 'MPB',
+    name: 'genre',
     class: 'input-mpb',
     type: 'checkbox',
   })} 
@@ -219,6 +200,7 @@ const About = () => {
     <label>
     ${Input({
     value: 'Samba',
+    name: 'genre',
     class: 'input-samba',
     type: 'checkbox',
   })} 
@@ -227,6 +209,7 @@ const About = () => {
     <label>
     ${Input({
     value: 'Sertanejo',
+    name: 'genre',
     class: 'input-sertanejo',
     type: 'checkbox',
   })} 
@@ -235,6 +218,7 @@ const About = () => {
     <label>
     ${Input({
     value: 'Forró',
+    name: 'genre',
     class: 'input-forro',
     type: 'checkbox',
   })} 
@@ -243,99 +227,21 @@ const About = () => {
     <label>
      ${Input({
     value: 'Pagode',
+    name: 'genre',
     class: 'input-pagode',
     type: 'checkbox',
   })} 
       Pagode
     </label>
     <label>
-     ${Input({
-    value: 'Jazz',
-    class: 'input-jazz',
-    type: 'checkbox',
-  })} 
-      Jazz
-    </label>
-    <label>
-    ${Input({
-    value: 'Blues',
-    class: 'input-blues',
-    type: 'checkbox',
-  })} 
-      Blues
-    </label>
-    <label>
-    ${Input({
-    value: 'Funk',
-    class: 'input-funk',
-    type: 'checkbox',
-  })} 
-      Funk
-    </label>
-    <label>
-    ${Input({
-    value: 'Hip Hop/Rap',
-    class: 'input-hiphop',
-    type: 'checkbox',
-  })} 
-      Hip Hop/Rap
-    </label>
-    <label>
-    ${Input({
-    value: 'Reggae',
-    class: 'input-reggae',
-    type: 'checkbox',
-  })} 
-      Reggae
-    </label>
-    <label>
-    ${Input({
-    value: 'Folk',
-    class: 'input-folk',
-    type: 'checkbox',
-  })} 
-      Folk
-    </label>
-    <label>
-    ${Input({
-    value: 'Alternativa',
-    class: 'input-alternativa',
-    type: 'checkbox',
-  })} 
-      Alternativa
-    </label>
-    <label>
-    ${Input({
-    value: 'Salsa',
-    class: 'input-salsa',
-    type: 'checkbox',
-  })} 
-      Salsa/som latino
-    </label>
-    <label>
-    ${Input({
-    value: 'Flashback',
-    class: 'input-flashback',
-    type: 'checkbox',
-  })} 
-      Flashback
-    </label>
-    <label>
     ${Input({
     value: 'Pop',
+    name: 'genre',
     class: 'input-pop',
     type: 'checkbox',
   })} 
       POP
-    </label>
-    <label>
-    ${Input({
-    value: 'Gospel',
-    class: 'input-gospel',
-    type: 'checkbox',
-  })} 
-      Gospel
-    </label>   
+    </label>  
     ${Button({
     class: 'button-back',
     title: 'Voltar',

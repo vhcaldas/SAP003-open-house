@@ -19,7 +19,9 @@ const createAccount = () => {
     .auth()
     .createUserWithEmailAndPassword(emailInput, passwordInput)
     .then(() => {
-      firebase.firestore().collection('users').add({
+      firebase.firestore().collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .set({
         name: nameInput,
         cnpj: cnpjInput,
         email: emailInput,
@@ -36,7 +38,7 @@ const createAccount = () => {
       })
     })
     .then(() => {
-      window.location = '#home';
+      window.location = '#about';
     })
     .catch((error) => {
       const errorCode = error.code;

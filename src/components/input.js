@@ -10,7 +10,7 @@ const Input = (props) => {
     id="${props.id}"
     min="${props.min}"
     max="${props.max}" 
-      required>
+    name="${props.name}">
     `;
 
   return template;
