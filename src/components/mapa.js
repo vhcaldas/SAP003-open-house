@@ -13,11 +13,12 @@ const Mapa = (props) => {
       zoom: 14,
       center: { lat: -23.5475, lng: -46.63611 }
     });
-
   const addressInput = props.users.address + ',' + props.users.number + ' São Paulo' + ' Brazil';
   const geocodingParams = {
     searchText: addressInput,
   };
+
+  const ui = H.ui.UI.createDefault(map, defaultLayers, 'pt-BR');
 
   const onResult = (result) => {
     let locations = result.Response.View[0].Result,
