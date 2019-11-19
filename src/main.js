@@ -7,37 +7,48 @@ import About from './pages/about.js';
 
 const locationHashChanged = () => {
   const main = document.querySelector('main');
-  firebase.auth().onAuthStateChanged(function (user) {  
+  firebase.auth().onAuthStateChanged(function (user) {
     switch (location.hash) {
       case '#login':
         user ? window.location = '#home' : main.innerHTML = Login();
-      break;
+        break;
       case '#register':
         main.innerHTML = Register();
-      break;
+        break;
       case '#about':
-       user ? main.innerHTML = About() : window.location = '#login';
-      break;
+        user ? main.innerHTML = About() : window.location = '#login';
+        break;
       case '#home':
         user ? main.innerHTML = Home() : window.location = '#login';
-      break;
+        break;
       case '#profile':
-        user ? main.innerHTML = Profile() : window.location = '#login';
-      break;
-      case '#event':
-        if (user){
+        if (user) {
           firebase
-          .firestore()
-          .collection('users').doc(firebase.auth().currentUser.uid)
-          .get().then((snap) => {
-            document.querySelector('main').innerHTML = Event({
-              users: snap.data()
+            .firestore()
+            .collection('users').doc(firebase.auth().currentUser.uid)
+            .get().then((snap) => {
+              document.querySelector('main').innerHTML = Profile({
+                users: snap.data()
+              })
             })
-          })
         } else {
           window.location = '#login';
         }
-      break;
+        break;
+      case '#event':
+        if (user) {
+          firebase
+            .firestore()
+            .collection('users').doc(firebase.auth().currentUser.uid)
+            .get().then((snap) => {
+              document.querySelector('main').innerHTML = Event({
+                users: snap.data()
+              })
+            })
+        } else {
+          window.location = '#login';
+        }
+        break;
       default:
         window.location = '#login';
     }

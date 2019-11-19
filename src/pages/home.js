@@ -1,4 +1,5 @@
 import Button from '../components/button.js'
+import Paragraph from '../components/paragraph.js'
 
 const logOut = () => {
   firebase.auth().signOut();
@@ -18,6 +19,10 @@ const Home = () => {
     <label for='toggle-side-menu'>
       <div class='fas fa-ellipsis-v'></div>
     </label>
+    ${Paragraph({
+      class: 'my-home',
+      text: 'HOME',
+    })}
     <div class='header-img'>
     </div>
   </div>

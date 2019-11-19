@@ -1,6 +1,9 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
-// import TitleOne from '../components/h-one.js';
+import TitleOne from '../components/h-one.js';
+import TitleTwo from '../components/h-two.js';
+import Paragraph from '../components/paragraph.js';
+
 
 // Funcao para criar eventos
 const saveEvent = () => {
@@ -47,10 +50,50 @@ const userProfile = () => {
   window.location = '#profile';
 };
 
-const createEvent = (props) => {
+const Event = (props) => {
   const template = `
+  <header class='header'>
+  <div class='header-title'>
+    <label for='toggle-side-menu'>
+      <div class='fas fa-ellipsis-v'></div>
+    </label>
+    ${Paragraph({
+    class: 'my-event',
+    text: 'MEUS EVENTOS',
+  })}
+    <div class='header-img'>
+    </div>
+  </div>
+    <input 
+      type='checkbox'
+      id='toggle-side-menu' 
+      class='toggle-side-menu'
+    />
+    <div class='side-menu hide-desktop'>
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn ',
+    onClick: userHome,
+    title: 'HOME',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn ',
+    onClick: logOut,
+    title: 'SAIR'
+  })}
+    </div>
+  </header>
   <section>
   <form class="form">
+  ${TitleOne({
+    class: 'name',
+    text: props.users.name,
+  })}
+  ${TitleTwo({
+    class: 'addEvent',
+    text: 'Adicionar Evento',
+  })}
   ${Input({
     class: 'input-image',
     placeholder: 'Insira a URL de sua imagem',
@@ -92,42 +135,6 @@ const createEvent = (props) => {
   })}
   </form>
   </section>
-
- `;
-  return template;
-};
-
-const Event = () => {
-  const template = `
-  <header class='header'>
-  <div class='header-title'>
-    <label for='toggle-side-menu'>
-      <div class='fas fa-ellipsis-v'></div>
-    </label>
-    <div class='header-img'>
-    </div>
-  </div>
-    <input 
-      type='checkbox'
-      id='toggle-side-menu' 
-      class='toggle-side-menu'
-    />
-    <div class='side-menu hide-desktop'>
-    ${Button({
-    type: 'button',
-    class: 'btn profile-btn ',
-    onClick: userHome,
-    title: 'HOME',
-  })}
-    ${Button({
-    type: 'button',
-    class: 'btn logout-btn ',
-    onClick: logOut,
-    title: 'SAIR'
-  })}
-    </div>
-  </header>
-    <section id="create-event" class="create-event">${createEvent()}</section>
   <footer class="footer">
     <div class='menu-icon'></div>
     ${Button({
@@ -137,9 +144,10 @@ const Event = () => {
     title: '',
   })}
   </footer>
-  `;
+
+ `;
   return template;
-}
+};
 
 export default Event;
 
