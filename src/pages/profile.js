@@ -16,6 +16,24 @@ const userHome = () => {
   window.location = '#home';
 }
 
+const aboutUs = () => {
+  firebase.firestore()
+    .collection('profile')
+    .where('userId', '==', firebase.auth().currentUser.uid)
+    .get().then((content) => {
+      content.docs.forEach((item) => {
+        document.querySelector('.about-us').innerHTML = `
+        <p>${item.data().price}</p>
+        <p>${item.data().drinks.join(', ')}</p>
+        <p>${item.data().food}</p>
+        <p>${item.data().features.join(', ')}</p>
+        <p>${item.data().music.join(', ')}</p>
+        `;
+      })
+    })
+}
+
+
 const Profile = (props) => {
   const template = `
   <header class='header'>
@@ -56,6 +74,7 @@ const Profile = (props) => {
   })}
     </div>
   </header>
+  <section class="user-profile">
   ${TitleOne({
     class: 'my-data',
     text: 'Meus Dados',
@@ -69,6 +88,8 @@ const Profile = (props) => {
     class: 'my-local',
     text: 'Meu Estabelecimento',
   })}
+  <div class="about-us">${aboutUs() || 'Carregando ...'}</div>
+  </section>
   <footer class="footer">
   </footer>
   `;
