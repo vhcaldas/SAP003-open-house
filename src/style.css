@@ -1,10 +1,7 @@
 * {
   font-family: 'Roboto', sans-serif;
+  margin:0;
 }
-
-/* body {
-   margin: 0;
-} */
 
 .button-login {
   background-color: #e0245c;
