@@ -19,6 +19,8 @@ const Mapa = (props) => {
     searchText: addressInput,
   };
 
+  const ui = H.ui.UI.createDefault(map, defaultLayers, 'pt-BR');
+
   const onResult = (result) => {
     let locations = result.Response.View[0].Result,
       position,
