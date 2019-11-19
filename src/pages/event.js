@@ -3,7 +3,7 @@ import Button from '../components/button.js';
 // import TitleOne from '../components/h-one.js';
 
 // Funcao para criar eventos
-const createEvent = () => {
+const saveEvent = () => {
   const imageInput = document.querySelector('.input-image').value;
   const bandNameInput = document.querySelector('.input-bandName').value;
   const dateInput = document.querySelector('.input-date').value;
@@ -26,27 +26,28 @@ const createEvent = () => {
     });
 };
 
+const cleanForm = () => {
+  document.querySelector('.form').reset();
+}
+
 // Funcao renderizar o mapa
 // const maps = () => {
 // 
 // }
 
-// Funcao para ir pra profile
-// const goProfile = () => {
-//   window.location = '#profile';
-// };
+const logOut = () => {
+  firebase.auth().signOut();
+}
 
-// Funcao para ir pra home
-// const goHome = () => {
-//   window.location = '#home';
-// };
+const userHome = () => {
+  window.location = '#home';
+}
 
-// Funcao para fazer LogOut
-// const goOut = () => {
-//   firebase.auth().signOut();
-// }
+const userProfile = () => {
+  window.location = '#profile';
+};
 
-const Event = (props) => {
+const createEvent = (props) => {
   const template = `
   <section>
   <form class="form">
@@ -77,8 +78,77 @@ const Event = (props) => {
     <option value="mpb">MPB</option>
     <option value="samba">Samba</option>
     <option value="sertanejo">Sertanejo</option>
-    <option value="forro">Forró</option>
-    <option value="pagode">Pagode</option>
+    <option value="pop">Pop</option>
+  </select>
+  ${Button({
+    class: 'button-back',
+    title: 'LIMPAR',
+    onClick: cleanForm,
+  })}
+  ${Button({
+    class: 'button-continue',
+    title: 'SALVAR',
+    onClick: saveEvent,
+  })}
+  </form>
+  </section>
+
+ `;
+  return template;
+};
+
+const Event = () => {
+  const template = `
+  <header class='header'>
+  <div class='header-title'>
+    <label for='toggle-side-menu'>
+      <div class='fas fa-ellipsis-v'></div>
+    </label>
+    <div class='header-img'>
+    </div>
+  </div>
+    <input 
+      type='checkbox'
+      id='toggle-side-menu' 
+      class='toggle-side-menu'
+    />
+    <div class='side-menu hide-desktop'>
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn ',
+    onClick: userHome,
+    title: 'HOME',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn ',
+    onClick: logOut,
+    title: 'SAIR'
+  })}
+    </div>
+  </header>
+    <section id="create-event" class="create-event">${createEvent()}</section>
+  <footer class="footer">
+    <div class='menu-icon'></div>
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn fas fa-user menu-icon',
+    onClick: userProfile,
+    title: '',
+  })}
+  </footer>
+  `;
+  return template;
+}
+
+export default Event;
+
+// ${TitleOne({
+//   text: props.users.name,
+// })}
+
+
+{/* <option value="pagode">Pagode</option>
     <option value="jazz">Jazz</option>
     <option value="blues">Blues</option>
     <option value="funk">Funk</option>
@@ -89,27 +159,4 @@ const Event = (props) => {
     <option value="ritmos-latinos">Ritmos latinos</option>
     <option value="flashback">Flasback</option>
     <option value="pop">Pop</option>
-    <option value="gospel">Gospel</option>
-  </select>
-  ${Button({
-    class: 'button-back',
-    title: 'LIMPAR',
-    // onClick: cleanForm,
-  })}
-  ${Button({
-    class: 'button-continue',
-    title: 'SALVAR',
-    onClick: createEvent,
-  })}
-  </form>
-  </section>
-
- `;
-  return template;
-};
-
-export default Event;
-
-// ${TitleOne({
-//   text: props.users.name,
-// })}
+    <option value="gospel">Gospel</option> */}
