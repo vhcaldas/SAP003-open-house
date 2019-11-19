@@ -9,9 +9,9 @@
 .button-login {
   background-color: #e0245c;
   color: #dce3f3;
-  width: 70vw;
+  width: 72vw;
   height: 5vh;
-  margin: 0vw 3vw 3vw 3vw;
+  margin: 2vw 3vw 1vw 3vw;
   font-size: 1rem;
   border-radius: 2vw;
   font-weight: bold;
@@ -22,9 +22,9 @@
 .button-register {
   background-color: #e0245c;
   color: #dce3f3;
-  width: 70vw;
+  width: 72vw;
   height: 5vh;
-  margin: 0vw 3vw 3vw 3vw;
+  margin: 0vw 3vw 1vw 3vw;
   font-size: 1rem;
   border-radius: 2vw;
   font-weight: bold;
@@ -172,7 +172,7 @@
 }
 
 .login-logo {
-  width: 200px;
+  width: 30vw;
   height: auto;
   padding-bottom: 4vw;
 }
@@ -193,7 +193,6 @@
 }
 
 /*verificar este*/
-
 .register-main {
   color: black
 }
@@ -318,7 +317,6 @@
 .menu-options {
   color: #DCE3F3;
 }
-
 .event-post {
   display: flex;
   flex-direction: row;

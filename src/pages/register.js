@@ -130,7 +130,7 @@ const Register = () => {
     placeholder: 'Telefone',
     type: 'number',
   })}
-      <h2>Dados de Acesso:</h2>
+      <h2>Email de Acesso:</h2>
         ${Input({
     class: 'input-email',
     placeholder: 'email@exemplo.com',
