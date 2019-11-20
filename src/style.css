@@ -2,6 +2,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.error {
+  color: #dce3f3;
+  text-align: center;
+}
+
+/*botões das telas*/
+
 .button-login {
   background-color: #e0245c;
   color: #dce3f3;
@@ -54,10 +61,7 @@
   cursor: pointer;
 }
 
-.error {
-  color: #dce3f3;
-  text-align: center;
-}
+/*inputs das telas*/
 
 .input-address {
   border-radius: 2vw;
@@ -161,6 +165,8 @@
   align-items: center;
 }
 
+/*tela do login: demais configurações*/
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -189,7 +195,8 @@
   align-items: center;
 }
 
-/*verificar este*/
+/*tela do registro: demais configurações*/
+
 .register-main {
   color: black
 }
@@ -232,7 +239,7 @@
   justify-content: center;
 }
 
-/*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
+/*A PARTIR DAQUI É A ESTILIZAÇÃO DE PÁGINAS EVENT, HOME E PROFILE */
 
 .header {
   margin-left: -2%;

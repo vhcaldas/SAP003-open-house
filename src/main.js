@@ -26,13 +26,13 @@ const locationHashChanged = () => {
             .firestore()
             .collection('users').doc(firebase.auth().currentUser.uid)
             .get().then((snap) => {
-              document.querySelector('main').innerHTML =Home({
+              document.querySelector('main').innerHTML = Home({
                 users: snap.data()
               })
             })
         } else {
           window.location = '#login';
-        }        
+        }
         window.printCard();
         break;
       case '#profile':

@@ -82,82 +82,82 @@ const Register = () => {
     <div>
       <form class="register-form" class="form">
         ${Input({
-    class: 'input-name',
-    placeholder: 'Nome do estabelecimento',
-    type: 'text',
-  })}
+        class: 'input-name',
+        placeholder: 'Nome do estabelecimento',
+        type: 'text',
+        })}
         ${Input({
-    class: 'input-CNPJ',
-    placeholder: 'CNPJ',
-    type: 'number',
-  })}
+        class: 'input-CNPJ',
+        placeholder: 'CNPJ',
+        type: 'number',
+        })}
         ${InputFunction({
-    class: 'input-CEP',
-    placeholder: 'CEP - Ex.01234567',
-    type: 'number',
-    onchange: zipNumber,
-  })}
+        class: 'input-CEP',
+        placeholder: 'CEP - Ex.01234567',
+        type: 'number',
+        onchange: zipNumber,
+        })}
         ${Input({
-    class: 'input-address',
-    placeholder: 'Endereço - Ex.Rua/Avenida',
-    type: 'text',
-  })}
+        class: 'input-address',
+        placeholder: 'Endereço - Ex.Rua/Avenida',
+        type: 'text',
+        })}
         ${Input({
-    class: 'input-number',
-    placeholder: 'Nº',
-    type: 'number',
-  })}
+        class: 'input-number',
+        placeholder: 'Nº',
+        type: 'number',
+        })}
         ${Input({
-    class: 'input-additionalAddress',
-    placeholder: 'Complemento',
-    type: 'text',
-  })}
+        class: 'input-additionalAddress',
+        placeholder: 'Complemento',
+        type: 'text',
+        })}
         ${Input({
-    class: 'input-neighborhood',
-    placeholder: 'Bairro',
-    type: 'text',
-  })}
+        class: 'input-neighborhood',
+        placeholder: 'Bairro',
+        type: 'text',
+        })}
         ${Input({
-    class: 'input-city',
-    placeholder: 'Cidade',
-    type: 'text',
-  })}
-        <select class="input-estate">
-          <option value="SP">SP</option>
-        </select>
+        class: 'input-city',
+        placeholder: 'Cidade',
+        type: 'text',
+        })}
+      <select class="input-estate">
+        <option value="SP">SP</option>
+      </select>
         ${Input({
-    class: 'input-phone',
-    placeholder: 'Telefone',
-    type: 'number',
-  })}
+        class: 'input-phone',
+        placeholder: 'Telefone',
+        type: 'number',
+        })}
       <h2>Email de Acesso:</h2>
         ${Input({
-    class: 'input-email',
-    placeholder: 'email@exemplo.com',
-    type: 'email',
-  })}
+        class: 'input-email',
+        placeholder: 'email@exemplo.com',
+        type: 'email',
+        })}
       <h2>Senha:</h2>
         ${Input({
-    class: 'input-password',
-    placeholder: 'Senha',
-    type: 'password',
-  })}
-        <p class="error"></p>
-      </form>
-      <div class="register-buttons">
+        class: 'input-password',
+        placeholder: 'Senha',
+        type: 'password',
+        })}
+      <p class="error"></p>
+    </form>
+    <div class="register-buttons">
       ${Button({
-    class: 'button-back',
-    title: 'VOLTAR',
-    onClick: backToLogin,
-  })}
-        ${Button({
-    class: 'button-continue',
-    title: 'CONTINUAR',
-    onClick: createAccount,
-  })}
-      </div>
+      class: 'button-back',
+      title: 'VOLTAR',
+      onClick: backToLogin,
+      })}
+      ${Button({
+      class: 'button-continue',
+      title: 'CONTINUAR',
+      onClick: createAccount,
+      })}
     </div>
-  </main>
+  </div>
+</main>
   `;
 
   return template;
