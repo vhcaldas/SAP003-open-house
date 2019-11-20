@@ -4,13 +4,13 @@ import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 import Paragraph from '../components/paragraph.js';
 
-// Funcao para criar eventos
 const saveEvent = () => {
   const imageInput = document.querySelector('.input-image').value;
   const bandNameInput = document.querySelector('.input-bandName').value;
   const dateInput = document.querySelector('.input-date').value;
   const timeInput = document.querySelector('.input-time').value;
   const genresInput = document.querySelector('.genres').value;
+  const name = document.querySelector('.name').textContent;
 
   firebase.firestore().collection('events').add({
     image: imageInput,
@@ -20,23 +20,20 @@ const saveEvent = () => {
     genres: genresInput,
     userId: firebase.auth().currentUser.uid,
     addedAt: (new Date()).toLocaleString('pt-BR'),
+    name: name,
   })
+  
+  document.querySelector('.input-image').value='';
+  document.querySelector('.input-bandName').value='';
+  document.querySelector('.input-date').value='';
+  document.querySelector('.input-time').value='';
+  document.querySelector('.genres').value='';
 
-  document.querySelector('.input-image').value = '';
-  document.querySelector('.input-bandName').value = '';
-  document.querySelector('.input-date').value = '';
-  document.querySelector('.input-time').value = '';
-  document.querySelector('.genres').value = '';
 };
 
 const cleanForm = () => {
   document.querySelector('.form-event').reset();
 }
-
-// Funcao renderizar o mapa
-// const maps = () => {
-// 
-// }
 
 const logOut = () => {
   firebase.auth().signOut();
@@ -146,26 +143,9 @@ const Event = (props) => {
     title: '',
   })}
   </footer>
-`;
+
+ `;
   return template;
 };
 
 export default Event;
-
-// ${TitleOne({
-//   text: props.users.name,
-// })}
-
-
-{/* <option value="pagode">Pagode</option>
-    <option value="jazz">Jazz</option>
-    <option value="blues">Blues</option>
-    <option value="funk">Funk</option>
-    <option value="hiphop-rap">Hip hop/Rap</option>
-    <option value="reggae">Reggae</option>
-    <option value="folk">Folk</option>
-    <option value="alternativa">Alternativa</option>
-    <option value="ritmos-latinos">Ritmos latinos</option>
-    <option value="flashback">Flasback</option>
-    <option value="pop">Pop</option>
-    <option value="gospel">Gospel</option> */}

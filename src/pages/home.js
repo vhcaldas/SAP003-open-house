@@ -31,13 +31,14 @@ const printCard = () => {
       postsLayout += `
         <ul class="event-post" data-id='${doc.id}' class='post'>
         <div class="div-img">
-          <img class="image" src="${doc.data().image}">
+        <img class="image" src="${doc.data().image}">
         </div>
         <div class="div-text">
-          <ul> ${doc.data().bandName} </ul>
-          <ul> ${date} </ul>
-          <ul> ${doc.data().time} </ul>
-          <ul> ${doc.data().genres} </ul>
+        <ul> ${doc.data().bandName} </ul>
+        <ul> ${date} </ul>
+        <ul> ${doc.data().time} </ul>
+        <ul> ${doc.data().genres} </ul>
+        <ul> ${doc.data().name} </ul>
         </div>`
         if(userId === doc.data().userId){
           postsLayout += `
@@ -64,61 +65,43 @@ const Home = () => {
         })}
       </div>
     </div>
+  </div>
     <input 
       type='checkbox'
       id='toggle-side-menu' 
       class='toggle-side-menu'
     />
     <div class='side-menu hide-desktop'>
-      ${Button({
-      type: 'button',
-      class: 'btn profile-btn menu-options',
-      onClick: userEvents,
-      title: 'MEUS EVENTOS',
-      })}
-      ${Button({
-      type: 'button',
-      class: 'btn logout-btn menu-options',
-      onClick: logOut,
-      title: 'SAIR'
-      })}
+    ${Button({
+    type: 'button',
+    class: 'btn profile-btn menu-options',
+    onClick: userEvents,
+    title: 'MEUS EVENTOS',
+  })}
+    ${Button({
+    type: 'button',
+    class: 'btn logout-btn menu-options',
+    onClick: logOut,
+    title: 'SAIR'
+  })}
     </div>
   </header>
   <main class='print-event'>
-      <ul class='post-layout' id='post-layout'></ul>
+  <ul class='post-layout' id='post-layout'></ul>
   </main>
   <footer class="footer">
     <div class='menu-icon'></div>
     ${Button({
-      type: 'button',
-      class: 'btn logout-btn fas fa-user menu-icon',
-      onClick: userProfile,
-      title: '',
-    })}
+    type: 'button',
+    class: 'btn logout-btn fas fa-user menu-icon',
+    onClick: userProfile,
+    title: '',
+  })}
   </footer>
   `;
   return template;
 }
 
-window.printCard = printCard;
+ window.printCard = printCard;
 
 export default Home;
-
-// const Home = (props) => {
-//   // let layout = '';
-//   // props.events.forEach(snap => {
-//   //   const event = snap.data();
-//   //   layout += CardEvent({
-//   //     id: snap.id,
-//   //     event,
-//   //   })
-//   // });
-//   const template =
-//     `
-//   <section>
-
-//   </section>
-//   `;
-//   return template;
-// };
-// export default Home;
