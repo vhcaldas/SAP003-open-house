@@ -267,21 +267,24 @@
   height: auto;
   background-color: #041484;
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.my-home{
+  font-size: 6vw;
 }
 
 .header-title {
   display: flex;
-  flex-direction: row;
   align-items: center;
   color: #DCE3F3;
-  font-size: 25px;
-  font-weight: 50px;
+  font-size: 7vw;
+  font-weight: 600;
 }
 
 .side-menu {
-  background-color: #E0245C;
+  background-color: #04042c;;
   display: flex !important;
   flex-direction: column;
   position: fixed;
@@ -293,9 +296,10 @@
 }
 
 .toggle-side-menu:checked+.side-menu {
-  width: 98%;
-  top: 53px;
+  width: 45vw;
+  top: 18vw;
   transition: all .4s linear;
+  background-color: #e0245c;
 }
 
 .hide-desktop {
@@ -307,14 +311,21 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 48px;
+  height: 10vw;
   background-color: #041484;
   text-align: center;
-  font-size: 25px;
+  font-size: 8vw;
 }
 
 .menu-icon {
-  color: #DCE3F3
+  font-weight: 900;
+  color:#e0245c;
+  background-color:transparent;
+  border:transparent;
+}
+
+.fa-bars {
+  margin: 3vw;
 }
 
 .fa-user:before {
@@ -323,7 +334,11 @@
 }
 
 .menu-options {
-  color: #DCE3F3;
+  background-color:#e0245c;
+  color:#edf1f4;
+  font-weight: normal;
+  padding: 2vw;
+  font-size: 4vw;
 }
 .event-post {
   display: flex;
@@ -338,8 +353,7 @@
 }
 
 .image {
-  width: 50%;
-  height: auto;
+  height: 20vh;
   width: 30vw;
 }
 
@@ -352,6 +366,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: 4vw;
 }
 
 .btn-delete{
@@ -401,4 +416,56 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* css page event  */
+.input-image{
+  border-radius: 2vw;
+    width: 70vw;
+    height: 4vh;
+    margin: 0vw 3vw 1vw 3vw;
+    padding: 1vw;
+
+}
+
+.input-bandName{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+.input-date{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+
+.input-time{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+
+.form-event{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vw 6vw 1vw 6vw;
+    align-items: center;
+}
+
+.div-event{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 24px;
 }

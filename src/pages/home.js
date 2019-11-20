@@ -54,15 +54,16 @@ const printCard = () => {
 const Home = () => {
   const template = `
   <header class='header'>
-  <div class='header-title'>
-  <div>
-    <label for='toggle-side-menu'>
-      <div class='fas fa-bars'></div>
-    </label>
-    ${Paragraph({
-      class: 'my-home',
-      text: 'EVENTOS',
-    })}
+    <div class='header-title'>
+      <div class=text-header></div>
+        <label for='toggle-side-menu'>
+          <div class='fas fa-bars'></div>
+        </label>
+        ${Paragraph({
+        class: 'my-home',
+        text: 'EVENTOS',
+        })}
+      </div>
     </div>
   </div>
     <input 

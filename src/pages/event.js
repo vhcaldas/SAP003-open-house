@@ -32,7 +32,7 @@ const saveEvent = () => {
 };
 
 const cleanForm = () => {
-  document.querySelector('.form').reset();
+  document.querySelector('.form-event').reset();
 }
 
 const logOut = () => {
@@ -50,30 +50,30 @@ const userProfile = () => {
 const Event = (props) => {
   const template = `
   <header class='header'>
-  <div class='header-title'>
-  <div>
-    <label for='toggle-side-menu'>
-    <div class='fas fa-bars'></div>
-    </label>
-    ${Paragraph({
+    <div class='header-title'>
+      <div>
+        <label for='toggle-side-menu'>
+        <div class='fas fa-bars'></div>
+        </label>
+        ${Paragraph({
     class: 'my-event',
     text: 'MEUS EVENTOS',
   })}
-  </div>
-  </div>
+      </div>
+    </div>
     <input 
       type='checkbox'
       id='toggle-side-menu' 
       class='toggle-side-menu'
     />
     <div class='side-menu hide-desktop'>
-    ${Button({
+      ${Button({
     type: 'button',
     class: 'btn profile-btn menu-options',
     onClick: userHome,
     title: 'HOME',
   })}
-    ${Button({
+      ${Button({
     type: 'button',
     class: 'btn logout-btn menu-options',
     onClick: logOut,
@@ -82,31 +82,31 @@ const Event = (props) => {
     </div>
   </header>
   <section>
-  <form class="form">
-  ${TitleOne({
+  <form class="form-event">
+    ${TitleOne({
     class: 'name',
     text: props.users.name,
   })}
-  ${TitleTwo({
+    ${TitleTwo({
     class: 'addEvent',
     text: 'Adicionar Evento',
   })}
-  ${Input({
+    ${Input({
     class: 'input-image',
     placeholder: 'Insira a URL de sua imagem',
     type: 'text',
   })}
-  ${Input({
+    ${Input({
     class: 'input-bandName',
     placeholder: 'Nome da banda/artista',
     type: 'text',
   })}
-  ${Input({
+    ${Input({
     class: 'input-date',
     placeholder: 'Selecione a data',
     type: 'date',
   })}
-  ${Input({
+    ${Input({
     class: 'input-time',
     placeholder: 'Selecione a data',
     type: 'time',
@@ -120,6 +120,7 @@ const Event = (props) => {
     <option value="Sertanejo">Sertanejo</option>
     <option value="Pop">Pop</option>
   </select>
+  <div class="div-event">
   ${Button({
     class: 'button-back',
     title: 'LIMPAR',
@@ -130,6 +131,7 @@ const Event = (props) => {
     title: 'SALVAR',
     onClick: saveEvent,
   })}
+  </div>
   </form>
   </section>
   <footer class="footer">
