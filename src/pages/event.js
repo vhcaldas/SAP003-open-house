@@ -4,7 +4,6 @@ import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 import Paragraph from '../components/paragraph.js';
 
-
 // Funcao para criar eventos
 const saveEvent = () => {
   const imageInput = document.querySelector('.input-image').value;
@@ -28,7 +27,6 @@ const saveEvent = () => {
   document.querySelector('.input-date').value='';
   document.querySelector('.input-time').value='';
   document.querySelector('.genres').value='';
-
 };
 
 const cleanForm = () => {
@@ -119,11 +117,11 @@ const Event = (props) => {
     max: '23:00',
   })}
   <select class="genres">
-    <option value="rock">Rock</option>
-    <option value="mpb">MPB</option>
-    <option value="samba">Samba</option>
-    <option value="sertanejo">Sertanejo</option>
-    <option value="pop">Pop</option>
+    <option value="Rock">Rock</option>
+    <option value="MPB">MPB</option>
+    <option value="Samba">Samba</option>
+    <option value="Sertanejo">Sertanejo</option>
+    <option value="Pop">Pop</option>
   </select>
   ${Button({
     class: 'button-back',
