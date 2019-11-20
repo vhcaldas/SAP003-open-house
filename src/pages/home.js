@@ -22,27 +22,29 @@ function delet(){
 const printCard = () => {
   const userId = firebase.auth().currentUser.uid;
   const allEvent = firebase.firestore().collection('events');
-  allEvent.orderBy('time', 'desc').get().then(snap => {
+
+  allEvent.orderBy('date').get().then(snap => {
     let postsLayout = '';
     snap.forEach((doc) => {  
+      let dt = doc.data().date;
+      let date = (new Date(dt)).toLocaleDateString('pt-BR');
       postsLayout += `
         <ul class="event-post" data-id='${doc.id}' class='post'>
-          <div class="div-img">
-            <img class="image" src="${doc.data().image}">
-          </div>
-          <div class="div-text">
-            <ul> ${doc.data().bandName} </ul>
-            <ul> ${doc.data().date} </ul>
-            <ul> ${doc.data().time} </ul>
-            <ul> ${doc.data().genres} </ul>
-          </div>
-        </ul>`
-      if(userId === doc.data().userId){
-        postsLayout += `
-        ${Button({class:'btn-delete fas fa-trash', dataId: doc.id, title: '', onClick: delet })}</ul>`
-      } else {
-        postsLayout += `</ul>`
-      }
+        <div class="div-img">
+          <img class="image" src="${doc.data().image}">
+        </div>
+        <div class="div-text">
+          <ul> ${doc.data().bandName} </ul>
+          <ul> ${date} </ul>
+          <ul> ${doc.data().time} </ul>
+          <ul> ${doc.data().genres} </ul>
+        </div>`
+        if(userId === doc.data().userId){
+          postsLayout += `
+          ${Button({class:'btn-delete fas fa-trash', dataId: doc.id, title: '', onClick: delet })}</ul>`
+        }else{
+          postsLayout += `</ul>`
+        }
     });
     document.getElementById('post-layout').innerHTML = postsLayout; 
   });  

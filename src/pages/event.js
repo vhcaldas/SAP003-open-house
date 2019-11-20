@@ -4,7 +4,6 @@ import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 import Paragraph from '../components/paragraph.js';
 
-
 // Funcao para criar eventos
 const saveEvent = () => {
   const imageInput = document.querySelector('.input-image').value;
@@ -28,7 +27,6 @@ const saveEvent = () => {
   document.querySelector('.input-date').value='';
   document.querySelector('.input-time').value='';
   document.querySelector('.genres').value='';
-
 };
 
 const cleanForm = () => {
@@ -87,55 +85,55 @@ const Event = (props) => {
     </div>
   </header>
   <section>
-    <form class="form">
-      ${TitleOne({
-        class: 'name',
-        text: props.users.name,
-      })}
-      ${TitleTwo({
-        class: 'addEvent',
-        text: 'Adicionar Evento',
-      })}
-      ${Input({
-        class: 'input-image',
-        placeholder: 'Insira a URL de sua imagem',
-        type: 'text',
-      })}
-      ${Input({
-        class: 'input-bandName',
-        placeholder: 'Nome da banda/artista',
-        type: 'text',
-      })}
-      ${Input({
-        class: 'input-date',
-        placeholder: 'Selecione a data',
-        type: 'date',
-      })}
-      ${Input({
-        class: 'input-time',
-        placeholder: 'Selecione a data',
-        type: 'time',
-        min: '00:00',
-        max: '23:00',
-      })}
-      <select class="genres">
-        <option value="rock">Rock</option>
-        <option value="mpb">MPB</option>
-        <option value="samba">Samba</option>
-        <option value="sertanejo">Sertanejo</option>
-        <option value="pop">Pop</option>
-      </select>
-      ${Button({
-        class: 'button-back',
-        title: 'LIMPAR',
-        onClick: cleanForm,
-      })}
-      ${Button({
-        class: 'button-continue',
-        title: 'SALVAR',
-        onClick: saveEvent,
-      })}
-    </form>
+  <form class="form">
+    ${TitleOne({
+      class: 'name',
+      text: props.users.name,
+    })}
+    ${TitleTwo({
+      class: 'addEvent',
+      text: 'Adicionar Evento',
+    })}
+    ${Input({
+      class: 'input-image',
+      placeholder: 'Insira a URL de sua imagem',
+      type: 'text',
+    })}
+    ${Input({
+      class: 'input-bandName',
+      placeholder: 'Nome da banda/artista',
+      type: 'text',
+    })}
+    ${Input({
+      class: 'input-date',
+      placeholder: 'Selecione a data',
+      type: 'date',
+    })}
+    ${Input({
+      class: 'input-time',
+      placeholder: 'Selecione a data',
+      type: 'time',
+      min: '00:00',
+      max: '23:00',
+    })}
+  <select class="genres">
+    <option value="Rock">Rock</option>
+    <option value="MPB">MPB</option>
+    <option value="Samba">Samba</option>
+    <option value="Sertanejo">Sertanejo</option>
+    <option value="Pop">Pop</option>
+  </select>
+  ${Button({
+    class: 'button-back',
+    title: 'LIMPAR',
+    onClick: cleanForm,
+  })}
+  ${Button({
+    class: 'button-continue',
+    title: 'SALVAR',
+    onClick: saveEvent,
+  })}
+  </form>
   </section>
   <footer class="footer">
     <div class='menu-icon'></div>
