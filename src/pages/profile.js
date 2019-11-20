@@ -38,12 +38,12 @@ const Profile = (props) => {
   const template = `
     <header class='header'>
     <div class='header-title'>
-      <div>
+      <div class="text-header">
         <label for='toggle-side-menu'>
           <div class='fas fa-bars'></div>
         </label>
         ${Paragraph({
-          class: 'my-event',
+          class: 'my-home',
           text: props.users.name,
         })}
       </div>
@@ -74,22 +74,24 @@ const Profile = (props) => {
       })}
     </div>
   </header>
-  <section class="user-profile">
-    ${TitleOne({
-      class: 'my-data',
-      text: 'Meus Dados',
-    })}
-    ${Paragraph({
-      class: 'my-address',
-      text: props.users.address + ', ' + props.users.number + ', ' + props.users.neighborhood + ', ' + props.users.city +'.',
-    })}
-    <div class='mapa'></div>
-    ${TitleTwo({
-      class: 'my-local',
-      text: 'Meu Estabelecimento',
-    })}
-    <div class="about-us">${aboutUs() || 'Carregando ...'}</div>
-  </section>
+  <main>
+    <section class="user-profile">
+      ${TitleOne({
+        class: 'my-home',
+        text: 'Meus Dados',
+      })}
+      ${Paragraph({
+        class: 'my-address',
+        text: props.users.address + ', ' + props.users.number + ', ' + props.users.neighborhood + ', ' + props.users.city +'.',
+      })}
+      <div class='mapa'></div>
+      ${TitleTwo({
+        class: 'my-local',
+        text: 'Meu Estabelecimento',
+      })}
+      <div class="about-us">${aboutUs() || 'Carregando ...'}</div>
+    </section>
+  </main>
   <footer class="footer">
   </footer>
   `;

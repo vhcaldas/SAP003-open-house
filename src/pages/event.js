@@ -22,12 +22,12 @@ const saveEvent = () => {
     addedAt: (new Date()).toLocaleString('pt-BR'),
     name: name,
   })
-  
-  document.querySelector('.input-image').value='';
-  document.querySelector('.input-bandName').value='';
-  document.querySelector('.input-date').value='';
-  document.querySelector('.input-time').value='';
-  document.querySelector('.genres').value='';
+
+  document.querySelector('.input-image').value = '';
+  document.querySelector('.input-bandName').value = '';
+  document.querySelector('.input-date').value = '';
+  document.querySelector('.input-time').value = '';
+  document.querySelector('.genres').value = '';
 
 };
 
@@ -51,14 +51,14 @@ const Event = (props) => {
   const template = `
   <header class='header'>
     <div class='header-title'>
-      <div>
+      <div class="text-header">
         <label for='toggle-side-menu'>
-        <div class='fas fa-bars'></div>
+          <div class='fas fa-bars'></div>
         </label>
         ${Paragraph({
-    class: 'my-event',
-    text: 'MEUS EVENTOS',
-  })}
+          class: 'my-home',
+          text: 'Meus Eventos',
+        })}
       </div>
     </div>
     <input 
@@ -68,51 +68,51 @@ const Event = (props) => {
     />
     <div class='side-menu hide-desktop'>
       ${Button({
-    type: 'button',
-    class: 'btn profile-btn menu-options',
-    onClick: userHome,
-    title: 'HOME',
-  })}
+      type: 'button',
+      class: 'btn profile-btn menu-options',
+      onClick: userHome,
+      title: 'Home',
+      })}
       ${Button({
-    type: 'button',
-    class: 'btn logout-btn menu-options',
-    onClick: logOut,
-    title: 'SAIR'
-  })}
+      type: 'button',
+      class: 'btn logout-btn menu-options',
+      onClick: logOut,
+      title: 'Sair'
+      })}
     </div>
   </header>
   <section>
-  <form class="form-event">
-    ${TitleOne({
-    class: 'name',
-    text: props.users.name,
-  })}
-    ${TitleTwo({
-    class: 'addEvent',
-    text: 'Adicionar Evento',
-  })}
-    ${Input({
-    class: 'input-image',
-    placeholder: 'Insira a URL de sua imagem',
-    type: 'text',
-  })}
-    ${Input({
-    class: 'input-bandName',
-    placeholder: 'Nome da banda/artista',
-    type: 'text',
-  })}
-    ${Input({
-    class: 'input-date',
-    placeholder: 'Selecione a data',
-    type: 'date',
-  })}
-    ${Input({
-    class: 'input-time',
-    placeholder: 'Selecione a data',
-    type: 'time',
-    min: '00:00',
-    max: '23:00',
-  })}
+    <form class="form-event">
+      ${TitleOne({
+      class: 'name',
+      text: props.users.name,
+      })}
+      ${TitleTwo({
+      class: 'addEvent',
+      text: 'Adicionar Evento',
+      })}
+      ${Input({
+      class: 'input-image',
+      placeholder: 'Insira a URL de sua imagem',
+      type: 'text',
+      })}
+      ${Input({
+      class: 'input-bandName',
+      placeholder: 'Nome da banda/artista',
+      type: 'text',
+      })}
+      ${Input({
+      class: 'input-date',
+      placeholder: 'Selecione a data',
+      type: 'date',
+      })}
+      ${Input({
+      class: 'input-time',
+      placeholder: 'Selecione a data',
+      type: 'time',
+      min: '00:00',
+      max: '23:00',
+      })}
   <select class="genres">
     <option value="Rock">Rock</option>
     <option value="MPB">MPB</option>
@@ -121,16 +121,16 @@ const Event = (props) => {
     <option value="Pop">Pop</option>
   </select>
   <div class="div-event">
-  ${Button({
+    ${Button({
     class: 'button-back',
     title: 'LIMPAR',
     onClick: cleanForm,
-  })}
-  ${Button({
+    })}
+    ${Button({
     class: 'button-continue',
     title: 'SALVAR',
     onClick: saveEvent,
-  })}
+    })}
   </div>
   </form>
   </section>
@@ -144,7 +144,7 @@ const Event = (props) => {
   })}
   </footer>
 
- `;
+`;
   return template;
 };
 

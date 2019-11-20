@@ -241,17 +241,6 @@
 
 /*A PARTIR DAQUI É A ESTILIZAÇÃO DE PÁGINAS EVENT, HOME E PROFILE */
 
-.header {
-  margin-left: -2%;
-  margin-top: -2%;
-  width: 102%;
-  height: 50%;
-  background-color: #041484;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .post {
   background-color: #2c54b3;
   width: 100%;
@@ -259,6 +248,12 @@
 
 .post-layout{
   padding: 3vw;
+}
+
+.text-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /*A PARTIR DAQUI É A EDIÇÃO DO SIDE-BAR MENU - PARA PGS EVENT, HOME E PROFILE */
@@ -269,10 +264,23 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 100vw;
+  left: 0;
 }
 
 .my-home{
   font-size: 6vw;
+  font-weight: 600;
+  margin: 4vw 0vw 4vw 0;
+}
+
+.my-address{
+  text-align: center;
+  margin: 0vw 0vw 4vw 0;
+}
+
+.my-local{
+  margin: 8vw 0vw 4vw 0;
 }
 
 .header-title {
@@ -280,7 +288,6 @@
   align-items: center;
   color: #DCE3F3;
   font-size: 7vw;
-  font-weight: 600;
 }
 
 .side-menu {
@@ -314,7 +321,6 @@
   height: 10vw;
   background-color: #041484;
   text-align: center;
-  font-size: 8vw;
 }
 
 .menu-icon {
@@ -322,6 +328,7 @@
   color:#e0245c;
   background-color:transparent;
   border:transparent;
+  padding-top: 1vw;
 }
 
 .fa-bars {
@@ -344,12 +351,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0;
+  padding: 4vw;
   height: 20vh;
   border: black;
   padding: 10px;
-  box-shadow: 5px 4px 5px #888888;
-  border-radius: 8px;
+  box-shadow: 2vw 2vw 4vw #e0245c;
+  border-radius: 5vw; 
+  margin: 1vw;
 }
 
 .image {
@@ -366,7 +374,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 4vw;
+  font-size: 80%;
 }
 
 .btn-delete{
@@ -377,13 +385,12 @@
   border: transparent;
 }
 
-@media only screen and (min-width: 576px) {
-  .header-title {
-    font-size: 30px;
-  }
-  .hide-mobile {
-    display: block;
-  }
+.name{
+  margin: 3vw 0 2vw 0;
+}
+
+.addEvent{
+  margin: 2vw 0 4vw 0;
 }
 
 /*VAI ATÉ AQUI*/
@@ -464,8 +471,17 @@
 
 .div-event{
   display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 24px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 24px;
+}
+
+@media only screen and (min-width: 576px) {
+  .header-title {
+    font-size: 30px;
+  }
+  .hide-mobile {
+    display: block;
+  }
 }
