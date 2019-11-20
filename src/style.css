@@ -185,7 +185,7 @@
 
 .login-section {
   display: flex;
-  flex-direction: columxn;
+  flex-direction: column;
   align-items: center;
 }
 
