@@ -20,7 +20,6 @@ const locationHashChanged = () => {
         user ? main.innerHTML = About() : window.location = '#login';
         break;
       case '#home':
-        // user ? main.innerHTML = Home() : window.location = '#login';   
         if (user) {
           firebase
             .firestore()
