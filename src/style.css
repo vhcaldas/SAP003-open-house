@@ -417,3 +417,55 @@
   flex-direction: column;
   align-items: center;
 }
+
+/* css page event  */
+.input-image{
+  border-radius: 2vw;
+    width: 70vw;
+    height: 4vh;
+    margin: 0vw 3vw 1vw 3vw;
+    padding: 1vw;
+
+}
+
+.input-bandName{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+.input-date{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+
+.input-time{
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
+}
+
+.form-event{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vw 6vw 1vw 6vw;
+    align-items: center;
+}
+
+.div-event{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 24px;
+}
