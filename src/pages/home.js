@@ -61,7 +61,7 @@ const Home = () => {
         </label>
         ${Paragraph({
         class: 'my-home',
-        text: 'EVENTOS',
+        text: 'Eventos',
         })}
       </div>
     </div>
@@ -76,13 +76,13 @@ const Home = () => {
     type: 'button',
     class: 'btn profile-btn menu-options',
     onClick: userEvents,
-    title: 'MEUS EVENTOS',
+    title: 'Meus Eventos',
   })}
     ${Button({
     type: 'button',
     class: 'btn logout-btn menu-options',
     onClick: logOut,
-    title: 'SAIR'
+    title: 'Sair'
   })}
     </div>
   </header>
