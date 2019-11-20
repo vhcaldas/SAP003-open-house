@@ -53,69 +53,69 @@ const userProfile = () => {
 const Event = (props) => {
   const template = `
   <header class='header'>
-  <div class='header-title'>
-  <div>
-    <label for='toggle-side-menu'>
-    <div class='fas fa-bars'></div>
-    </label>
-    ${Paragraph({
-    class: 'my-event',
-    text: 'MEUS EVENTOS',
-  })}
-  </div>
-  </div>
+    <div class='header-title'>
+      <div>
+        <label for='toggle-side-menu'>
+        <div class='fas fa-bars'></div>
+        </label>
+        ${Paragraph({
+        class: 'my-event',
+        text: 'MEUS EVENTOS',
+        })}
+      </div>
+    </div>
     <input 
       type='checkbox'
       id='toggle-side-menu' 
       class='toggle-side-menu'
     />
     <div class='side-menu hide-desktop'>
-    ${Button({
-    type: 'button',
-    class: 'btn profile-btn menu-options',
-    onClick: userHome,
-    title: 'HOME',
-  })}
-    ${Button({
-    type: 'button',
-    class: 'btn logout-btn menu-options',
-    onClick: logOut,
-    title: 'SAIR'
-  })}
+      ${Button({
+      type: 'button',
+      class: 'btn profile-btn menu-options',
+      onClick: userHome,
+      title: 'HOME',
+      })}
+      ${Button({
+      type: 'button',
+      class: 'btn logout-btn menu-options',
+      onClick: logOut,
+      title: 'SAIR'
+      })}
     </div>
   </header>
   <section>
   <form class="form">
-  ${TitleOne({
-    class: 'name',
-    text: props.users.name,
-  })}
-  ${TitleTwo({
-    class: 'addEvent',
-    text: 'Adicionar Evento',
-  })}
-  ${Input({
-    class: 'input-image',
-    placeholder: 'Insira a URL de sua imagem',
-    type: 'text',
-  })}
-  ${Input({
-    class: 'input-bandName',
-    placeholder: 'Nome da banda/artista',
-    type: 'text',
-  })}
-  ${Input({
-    class: 'input-date',
-    placeholder: 'Selecione a data',
-    type: 'date',
-  })}
-  ${Input({
-    class: 'input-time',
-    placeholder: 'Selecione a data',
-    type: 'time',
-    min: '00:00',
-    max: '23:00',
-  })}
+    ${TitleOne({
+      class: 'name',
+      text: props.users.name,
+    })}
+    ${TitleTwo({
+      class: 'addEvent',
+      text: 'Adicionar Evento',
+    })}
+    ${Input({
+      class: 'input-image',
+      placeholder: 'Insira a URL de sua imagem',
+      type: 'text',
+    })}
+    ${Input({
+      class: 'input-bandName',
+      placeholder: 'Nome da banda/artista',
+      type: 'text',
+    })}
+    ${Input({
+      class: 'input-date',
+      placeholder: 'Selecione a data',
+      type: 'date',
+    })}
+    ${Input({
+      class: 'input-time',
+      placeholder: 'Selecione a data',
+      type: 'time',
+      min: '00:00',
+      max: '23:00',
+    })}
   <select class="genres">
     <option value="Rock">Rock</option>
     <option value="MPB">MPB</option>
@@ -138,14 +138,13 @@ const Event = (props) => {
   <footer class="footer">
     <div class='menu-icon'></div>
     ${Button({
-    type: 'button',
-    class: 'btn logout-btn fas fa-user menu-icon',
-    onClick: userProfile,
-    title: '',
-  })}
+      type: 'button',
+      class: 'btn logout-btn fas fa-user menu-icon',
+      onClick: userProfile,
+      title: '',
+    })}
   </footer>
-
- `;
+`;
   return template;
 };
 
