@@ -36,7 +36,7 @@ As **caraterísticas técnicas** da aplicação envolveram:
 
 ##### CSS3
 * Implementação de seletores de classe.
-* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile**,conforme modelo proposto.
+* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile**, conforme modelo proposto.
 * Não utilizamos frameworks de CSS (bootstrap), nem estilização com `float`.
 
 ##### JavaScript (ES6+)
