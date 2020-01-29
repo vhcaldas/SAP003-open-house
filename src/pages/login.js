@@ -30,36 +30,40 @@ const register = () => {
 
 const Login = () => {
   const template = `
-    <main class="login-main">
+    <div class="login-main">
       <section class= "login-section">
+      <div>
         <img class="login-logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
+      </div>
+      <div class= 'login-container'>
         <form class="login-form" class="form">
           ${Input({
-            class: 'input-email',
-            placeholder: 'Email',
-            type: 'email',
-          })}
+          class: 'input-email',
+          placeholder: 'Email',
+          type: 'email',
+        })}
           ${Input({
-            class: 'input-password',
-            placeholder: 'Senha',
-            type: 'password',
+          class: 'input-password',
+          placeholder: 'Senha',
+          type: 'password',
+        })}
+        <div class="login-buttons">
+            ${Button({
+            class: 'button-login',
+            title: 'ENTRAR',
+            onClick: signIn,
           })}
-          <div class="login-buttons">
             ${Button({
-              class: 'button-login',
-              title: 'ENTRAR',
-              onClick: signIn,
-            })}
-            ${Button({
-              class: 'button-register',
-              title: 'REGISTRAR',
-              onClick: register,
-            })}
-          </div>
-          <p class="error"></p>
-        </form>
-      </section>
-    </main>
+            class: 'button-register',
+            title: 'REGISTRAR',
+            onClick: register,
+          })}
+        </div>
+        <p class="error"></p>
+      </form>
+      </div>
+    </section>
+  </div>
   `;
 
   return template;
