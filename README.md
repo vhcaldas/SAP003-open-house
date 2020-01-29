@@ -7,7 +7,8 @@
   - [2. Características-Técnicas.](#2-características-técnicas)
   - [3. Histórias de Usuários Implementadas](#3-histórias-de-usuário-implementadas)
   - [4. Tempo do Projeto](#4-tempo-do-projeto)
-  - [5. Futuras Implementações](#5-futuras-implementações)
+  - [5. Futuras Implementações](#6-futuras-implementacoes)
+
 
 
 ## 1. Resumo do Projeto
@@ -24,7 +25,9 @@ Foram utilizadas duas APIs:
 
 As **caraterísticas técnicas** da aplicação envolveram:
 - Uma *Single-Page Application*;
-- CSS: Desenho com enfoque no _mobile only_;
+
+- CSS: Desenho com enfoque no mobile first;
+
 - Permite a persistência, edição, atualização e exclusão de dados;
 
 ### Desenvolvimento FrontEnd
@@ -36,7 +39,9 @@ As **caraterísticas técnicas** da aplicação envolveram:
 
 ##### CSS3
 * Implementação de seletores de classe.
-* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile**, conforme modelo proposto.
+
+* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile e desktop**,conforme modelo proposto.
+
 * Não utilizamos frameworks de CSS (bootstrap), nem estilização com `float`.
 
 ##### JavaScript (ES6+)
@@ -50,7 +55,8 @@ As **caraterísticas técnicas** da aplicação envolveram:
 Neste projeto, utilizamos o `Firestore` do `Firebase` para estruturação dos dados, para que estes possam ser consultados, atualizados, modificados e eliminados segundo os requerimentos do usuário.
 
 #### Ferramentas utilizadas
-1. HTML5
+
+1. HTML 5
 2. CSS
 3. *Vanilla* JS
 4. Git e GitHub
@@ -78,3 +84,4 @@ O projeto foi elaborado em 2 (dois) dias.
 * Telas de Cadastro para os clientes de bares.
 
 * Possibilidade de edição de dados.
+
