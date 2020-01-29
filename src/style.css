@@ -515,6 +515,10 @@
     width: 47vw;
   }
 
+  .input-estate{
+    height:8vw;
+  }
+
   .login-buttons{
     display: flex;
     flex-direction: row;
