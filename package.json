@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amandaalmeida89/SAP003-open-house.git"
+    "url": "git+https://github.com/vhcaldas/SAP003-open-house"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amandaalmeida89/SAP003-open-house/issues"
+    "url": "https://github.com/vhcaldas/SAP003-open-house/issues"
   },
-  "homepage": "https://github.com/amandaalmeida89/SAP003-open-house#readme"
+  "homepage": "https://github.com/vhcaldas/SAP003-open-house#readme"
 }
