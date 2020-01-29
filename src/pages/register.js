@@ -76,8 +76,8 @@ const Register = () => {
   const template = `
   <main class = "register-main">
     <div class="register-title">
-      <h1 >Bem vindo ao liveinSampa!</h1>
-      <h2>Informações do Estabelecimento:</h2>
+      <h1 class = "register-main-title">Bem vindo ao liveinSampa!</h1>
+      <h4>Informações do Estabelecimento:</h4>
     </div>
     <div>
       <form class="register-form" class="form">
@@ -126,35 +126,35 @@ const Register = () => {
         <option value="SP">SP</option>
       </select>
         ${Input({
-        class: 'input-phone',
-        placeholder: 'Telefone',
-        type: 'number',
-        })}
+    class: 'input-phone',
+    placeholder: 'Telefone',
+    type: 'number',
+  })}
       <h2>Email de Acesso:</h2>
         ${Input({
-        class: 'input-email',
-        placeholder: 'email@exemplo.com',
-        type: 'email',
-        })}
+    class: 'input-email',
+    placeholder: 'email@exemplo.com',
+    type: 'email',
+  })}
       <h2>Senha:</h2>
         ${Input({
-        class: 'input-password',
-        placeholder: 'Senha',
-        type: 'password',
-        })}
+    class: 'input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
       <p class="error"></p>
     </form>
     <div class="register-buttons">
       ${Button({
-      class: 'button-back',
-      title: 'VOLTAR',
-      onClick: backToLogin,
-      })}
+    class: 'button-back',
+    title: 'VOLTAR',
+    onClick: backToLogin,
+  })}
       ${Button({
-      class: 'button-continue',
-      title: 'CONTINUAR',
-      onClick: createAccount,
-      })}
+    class: 'button-continue',
+    title: 'CONTINUAR',
+    onClick: createAccount,
+  })}
     </div>
   </div>
 </main>

@@ -203,9 +203,6 @@
 
 /*tela do registro: demais configurações*/
 
-.register-main {
-  color: black
-}
 
 .register-div {
   display: flex;
@@ -226,9 +223,13 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to bottom, #2c54b3, #041484);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100vw;
+  height: auto;
   color: #edf1f4;
-  padding-top: 4vw;
 }
 
 .register-title {
@@ -236,6 +237,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin: 2vw auto;
 }
 
 .register-buttons {
@@ -526,5 +528,9 @@
 
   .login-section{
     flex-direction: row;
+  }
+
+  .register-main-title{
+    margin-bottom: 2vw;
   }
 }
