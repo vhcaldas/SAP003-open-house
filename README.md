@@ -10,6 +10,7 @@
   - [5. Futuras Implementações](#6-futuras-implementacoes)
 
 
+
 ## 1. Resumo do Projeto
 
 Neste projeto, criamos a Rede Social **Live In Sampa**, que busca conectar donos de bares e usuários para anúncios de shows locais. 
@@ -24,7 +25,9 @@ Foram utilizadas duas APIs:
 
 As **caraterísticas técnicas** da aplicação envolveram:
 - Uma *Single-Page Application*;
+
 - CSS: Desenho com enfoque no mobile first;
+
 - Permite a persistência, edição, atualização e exclusão de dados;
 
 ### Desenvolvimento FrontEnd
@@ -36,7 +39,9 @@ As **caraterísticas técnicas** da aplicação envolveram:
 
 ##### CSS3
 * Implementação de seletores de classe.
+
 * Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile e desktop**,conforme modelo proposto.
+
 * Não utilizamos frameworks de CSS (bootstrap), nem estilização com `float`.
 
 ##### JavaScript (ES6+)
@@ -50,6 +55,7 @@ As **caraterísticas técnicas** da aplicação envolveram:
 Neste projeto, utilizamos o `Firestore` do `Firebase` para estruturação dos dados, para que estes possam ser consultados, atualizados, modificados e eliminados segundo os requerimentos do usuário.
 
 #### Ferramentas utilizadas
+
 1. HTML 5
 2. CSS
 3. *Vanilla* JS
@@ -78,3 +84,4 @@ O projeto foi elaborado em 2 (dois) dias.
 * Telas de Cadastro para os clientes de bares.
 
 * Possibilidade de edição de dados.
+
