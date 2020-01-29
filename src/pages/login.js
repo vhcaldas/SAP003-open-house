@@ -33,7 +33,7 @@ const Login = () => {
     <div class="login-main">
       <section class= "login-section">
       <div>
-        <img class="login-logo" src="./images/logo.png" alt="logo autofalante escrito live In Sampa">
+        <img class="login-logo" src="./images/logocinza.png" alt="logo autofalante escrito live In Sampa">
       </div>
       <div class= 'login-container'>
         <form class="login-form" class="form">
