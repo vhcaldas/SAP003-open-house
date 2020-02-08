@@ -1,19 +1,18 @@
 # Projeto Open House | Live In Sampa 
 
 ## Índice
-- [Live In Sampa](#live-in-sampa)
-  - [Índice](#Índice)
+- [Índice](#live-in-sampa)
   - [1. Resumo do Projeto.](#1-resumo-do-projeto)
   - [2. Características-Técnicas.](#2-características-técnicas)
   - [3. Histórias de Usuários Implementadas](#3-histórias-de-usuário-implementadas)
   - [4. Tempo do Projeto](#4-tempo-do-projeto)
   - [5. Futuras Implementações](#6-futuras-implementacoes)
 
-
-
 ## 1. Resumo do Projeto
 
 Neste projeto, criamos a Rede Social **Live In Sampa**, que busca conectar donos de bares e usuários para anúncios de shows locais. 
+
+É possível ter acesso à plataforma de forma temporária por meio do e-mail: olivia@olivia.com, senha _olivia_.
 
 Foram utilizadas duas APIs: 
 

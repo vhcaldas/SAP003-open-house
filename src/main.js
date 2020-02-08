@@ -5,6 +5,7 @@ import Event from './pages/event.js';
 import Profile from './pages/profile.js';
 import About from './pages/about.js';
 import Mapa from './components/mapa.js';
+import ForgotPassword from './components/forgotpassword.js'
 
 const locationHashChanged = () => {
   const main = document.querySelector('main');
@@ -12,6 +13,9 @@ const locationHashChanged = () => {
     switch (location.hash) {
       case '#login':
         user ? window.location = '#home' : main.innerHTML = Login();
+        break;
+      case '#forgot_password':
+        user ? window.location = '#post' : main.innerHTML = ForgotPassword();
         break;
       case '#register':
         main.innerHTML = Register();
