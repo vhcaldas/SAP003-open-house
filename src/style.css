@@ -551,6 +551,12 @@
   margin: 0;
 }
 
+.alertMessage {
+  text-align: center;
+  color: #dce3f3;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 992px) {
 
   .button-login {

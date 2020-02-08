@@ -2,11 +2,10 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function resetPassword() {
-  const emailAddress = document.querySelector('.email-input').value;
+  const emailAddress = document.querySelector('.fp-input').value;
   firebase.auth().sendPasswordResetEmail(emailAddress)
     .then(() => {
-      document.querySelector('.alertMessage')
-        .textContent = 'Email enviado <br> Verifique sua caixa de email';
+      document.querySelector('.alertMessage').textContent = 'Email enviado. Verifique sua caixa de email';
     });
 }
 
@@ -25,14 +24,14 @@ function ForgotPassword() {
             value: '',
             type: 'email',
           })}
-            ${Button({
+          ${Button({
             id: 'btnResetpassword',
             class: 'fp-button',
             title: 'Redefinir senha',
             onClick: resetPassword,
           })}
         </form>
-        <p class="error"></p>
+        <p class="alertMessage"></p>
       </section>
     </div>
   `
@@ -40,6 +39,5 @@ function ForgotPassword() {
   window.location.hash = 'forgot_password';
   return template;
 }
-
 
 export default ForgotPassword;
