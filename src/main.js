@@ -5,7 +5,7 @@ import Event from './pages/event.js';
 import Profile from './pages/profile.js';
 import About from './pages/about.js';
 import Mapa from './components/mapa.js';
-import ForgotPassword from './components/forgotpassword.js'
+import ForgotPassword from './pages/forgotpassword.js'
 
 const locationHashChanged = () => {
   const main = document.querySelector('main');
