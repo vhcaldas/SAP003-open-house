@@ -178,7 +178,7 @@
 .login-logo {
   width: 30vw;
   height: auto;
-  padding-bottom: 4vw;
+  padding: 2vw 0 4vw 0;
 }
 
 .login-main {
@@ -254,11 +254,11 @@
   width: 100%;
 }
 
-.post-layout{
+.post-layout {
   padding: 3vw;
 }
 
-.text-header{
+.text-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -276,18 +276,18 @@
   left: 0;
 }
 
-.my-home{
+.my-home {
   font-size: 6vw;
   font-weight: 600;
   margin: 4vw 0vw 4vw 0;
 }
 
-.my-address{
+.my-address {
   text-align: center;
   margin: 0vw 0vw 4vw 0;
 }
 
-.my-local{
+.my-local {
   margin: 8vw 0vw 4vw 0;
 }
 
@@ -299,7 +299,8 @@
 }
 
 .side-menu {
-  background-color: #04042c;;
+  background-color: #04042c;
+  ;
   display: flex !important;
   flex-direction: column;
   position: fixed;
@@ -333,9 +334,9 @@
 
 .menu-icon {
   font-weight: 900;
-  color:#e0245c;
-  background-color:transparent;
-  border:transparent;
+  color: #e0245c;
+  background-color: transparent;
+  border: transparent;
   padding-top: 1vw;
 }
 
@@ -349,12 +350,13 @@
 }
 
 .menu-options {
-  background-color:#e0245c;
-  color:#edf1f4;
+  background-color: #e0245c;
+  color: #edf1f4;
   font-weight: normal;
   padding: 2vw;
   font-size: 4vw;
 }
+
 .event-post {
   display: flex;
   flex-direction: row;
@@ -364,7 +366,7 @@
   border: black;
   padding: 10px;
   box-shadow: 2vw 2vw 4vw #e0245c;
-  border-radius: 5vw; 
+  border-radius: 5vw;
   margin: 1vw;
 }
 
@@ -378,14 +380,14 @@
   align-items: center;
 }
 
-.div-text{
+.div-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-size: 80%;
 }
 
-.btn-delete{
+.btn-delete {
   display: flex;
   justify-content: baseline;
   align-self: flex-end;
@@ -393,11 +395,11 @@
   border: transparent;
 }
 
-.name{
+.name {
   margin: 3vw 0 2vw 0;
 }
 
-.addEvent{
+.addEvent {
   margin: 2vw 0 4vw 0;
 }
 
@@ -433,34 +435,23 @@
   align-items: center;
 }
 
-/* css page event  */
-.input-image{
-  border-radius: 2vw;
-    width: 70vw;
-    height: 4vh;
-    margin: 0vw 3vw 1vw 3vw;
-    padding: 1vw;
-
+.text-simple {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1%;
+  color: #edf1f4;
+  margin-bottom: 2vw;
 }
 
-.input-bandName{
+.input-image {
   border-radius: 2vw;
   width: 70vw;
   height: 4vh;
   margin: 0vw 3vw 1vw 3vw;
   padding: 1vw;
-
-}
-.input-date{
-  border-radius: 2vw;
-  width: 70vw;
-  height: 4vh;
-  margin: 0vw 3vw 1vw 3vw;
-  padding: 1vw;
-
 }
 
-.input-time{
+.input-bandName {
   border-radius: 2vw;
   width: 70vw;
   height: 4vh;
@@ -469,15 +460,32 @@
 
 }
 
-.form-event{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1vw 6vw 1vw 6vw;
-    align-items: center;
+.input-date {
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+
 }
 
-.div-event{
+.input-time {
+  border-radius: 2vw;
+  width: 70vw;
+  height: 4vh;
+  margin: 0vw 3vw 1vw 3vw;
+  padding: 1vw;
+}
+
+.form-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1vw 6vw 1vw 6vw;
+  align-items: center;
+}
+
+.div-event {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -485,21 +493,85 @@
   margin: 24px;
 }
 
+/*tela de esqueci a senha*/
+
+.forgot-password-section {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+}
+
+.register-template {
+  display: flex;
+}
+
+.fp-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fp-input{
+  width: 72vw;
+  padding: 2vw;
+  margin: 2vw;
+}
+
+.fp-button{
+  background-color: #e0245c;
+  color: #dce3f3;
+  width: 72vw;
+  height: 5vh;
+  margin: 2vw 3vw 1vw 3vw;
+  font-size: 1rem;
+  border-radius: 2vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.fp-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, #04042c, #041484);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.alertMessage {
+  text-align: center;
+  color: #dce3f3;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 992px) {
 
-  .button-login{
+  .button-login {
     width: 25vw;
     height: 10vh;
     margin: 0;
     margin-right: 1vw;
   }
 
-  .button-register{
+  .button-register {
     width: 25vw;
     height: 10vh;
     margin: 0;
   }
-  
+
   .header-title {
     font-size: 30px;
   }
@@ -508,33 +580,53 @@
     display: block;
   }
 
-  .input-email{
-    width: 47vw;
-  }
-  .input-password{
+  .input-email {
     width: 47vw;
   }
 
-  .input-estate{
-    height:8vw;
+  .input-password {
+    width: 47vw;
   }
 
-  .login-buttons{
+  .input-estate {
+    height: 8vw;
+  }
+
+  .login-buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 2vw 0;
   }
 
-  .login-logo{
+  .login-logo {
     margin: 2vw;
   }
 
-  .login-section{
+  .login-section {
     flex-direction: row;
   }
 
-  .register-main-title{
+  .register-main-title {
     margin-bottom: 2vw;
   }
+
+  .fp-main{
+    flex-direction: row;
+    width: auto;
+  }
+
+  .fp-input{
+    width: 30vw;
+    padding: 1vw;
+    margin: 0 0 2vw 0;
+  }
+
+  .fp-button{
+    width: 30vw;
+    height: auto;
+    padding: 1vw;
+    margin: 0 0 2vw 0;
+  }
+
 }

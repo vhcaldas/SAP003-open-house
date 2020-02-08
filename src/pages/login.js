@@ -38,28 +38,31 @@ const Login = () => {
       <div class= 'login-container'>
         <form class="login-form" class="form">
           ${Input({
-          class: 'input-email',
-          placeholder: 'Email',
-          type: 'email',
-        })}
+    class: 'input-email',
+    placeholder: 'Email',
+    type: 'email',
+  })}
           ${Input({
-          class: 'input-password',
-          placeholder: 'Senha',
-          type: 'password',
-        })}
+    class: 'input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
         <div class="login-buttons">
             ${Button({
-            class: 'button-login',
-            title: 'ENTRAR',
-            onClick: signIn,
-          })}
+    class: 'button-login',
+    title: 'ENTRAR',
+    onClick: signIn,
+  })}
             ${Button({
-            class: 'button-register',
-            title: 'REGISTRAR',
-            onClick: register,
-          })}
+    class: 'button-register',
+    title: 'REGISTRAR',
+    onClick: register,
+  })}
         </div>
         <p class="error"></p>
+        <p class="text-simple">
+          <a class='link' href="#forgot_password">Esqueceu a senha?</a>
+        </p>
       </form>
       </div>
     </section>
