@@ -3,14 +3,12 @@ import Paragraph from '../components/paragraph.js'
 import TitleOne from '../components/h-one.js';
 import TitleTwo from '../components/h-two.js';
 
-
 const logOut = () => {
   firebase.auth().signOut();
 }
 const userEvents = () => {
   window.location = '#event';
 }
-
 
 const userHome = () => {
   window.location = '#home';
