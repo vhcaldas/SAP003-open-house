@@ -1,6 +1,5 @@
 import Button from '../components/button.js'
 import Paragraph from '../components/paragraph.js'
-import TitleOne from '../components/h-one.js'
 
 const logOut = () => {
   firebase.auth().signOut();
