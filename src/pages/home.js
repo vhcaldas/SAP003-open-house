@@ -1,6 +1,5 @@
 import Button from '../components/button.js'
 import Paragraph from '../components/paragraph.js'
-import TitleOne from '../components/h-one.js'
 
 const logOut = () => {
   firebase.auth().signOut();
@@ -85,22 +84,21 @@ const Home = () => {
       })}
     </div>
   </header>
-  <div>
-    <main class='print-event'>
+  <main class='print-event'>
     <section class='post-layout' id='post-layout'></section>
-    </main>
-    <footer class="footer">
-      <div class='menu-icon'>
-        ${Button({
-        type: 'button',
-        class: 'btn logout-btn fas fa-user menu-icon',
-        onClick: userProfile,
-        title: '',
-        })}
-      </div>
-    </footer>
-  </div>
+  </main>
+  <footer class="footer">
+    <div class='menu-icon'>
+      ${Button({
+      type: 'button',
+      class: 'btn logout-btn fas fa-user menu-icon',
+      onClick: userProfile,
+      title: '',
+      })}
+    </div>
+  </footer>
   `;
+
   return template;
 }
 
