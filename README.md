@@ -12,7 +12,7 @@
 
 Neste projeto, criamos a Rede Social **Live In Sampa**, que busca conectar donos de bares e usuários para anúncios de shows locais. 
 
-É possível ter acesso à plataforma de forma temporária por meio do e-mail: olivia@olivia.com, senha _olivia_.
+É possível ter acesso à plataforma de forma temporária por meio do e-mail: olivia@olivia.com, senha `olivia`.
 
 Foram utilizadas duas APIs: 
 
@@ -23,11 +23,12 @@ Foram utilizadas duas APIs:
 ## 2. Características Técnicas
 
 As **caraterísticas técnicas** da aplicação envolveram:
+
 - Uma *Single-Page Application*;
 
-- CSS: Desenho com enfoque no mobile first;
+- CSS: Responsivo, feito _mobile first_;
 
-- Permite a persistência, edição, atualização e exclusão de dados;
+- App que permite a persistência, edição, atualização e exclusão de dados;
 
 ### Desenvolvimento FrontEnd
 
@@ -39,14 +40,16 @@ As **caraterísticas técnicas** da aplicação envolveram:
 ##### CSS3
 * Implementação de seletores de classe.
 
-* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile e desktop**,conforme modelo proposto.
+* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile e desktop**, conforme modelo proposto.
 
 * Não utilizamos frameworks de CSS (bootstrap), nem estilização com `float`.
 
 ##### JavaScript (ES6+)
 
 * Utilizamos módulos do JavaScript ES6 na elaboração do código.
-* Uso de Template strings.
+
+* Utilizamos de Template strings.
+
 * Implementamos um sistema de rotas (sem uso de bibliotecas externas) para trocar de uma tela para outra de maneira dinâmica (SPA).
 
 ### Persistência de dados
@@ -55,12 +58,21 @@ Neste projeto, utilizamos o `Firestore` do `Firebase` para estruturação dos da
 
 #### Ferramentas utilizadas
 
-1. HTML 5
-2. CSS
-3. *Vanilla* JS
-4. Git e GitHub
-5. Visual Code Studio
-6. Firebase *auth*, *firestore* e *hosting*
+1. HTML 5;
+
+2. CSS;
+
+3. Vanilla JS;
+
+4. `Git` e `GitHub`;
+
+5. API Here;
+
+6. API ViaCep;
+
+7. `Visual Code Studio`; e
+
+8. `Firebase Auth`, `Firebase Firestore` e `Firebase Hosting`.
 
 ## 3. Histórias de Usuário Implementadas
  
@@ -82,5 +94,5 @@ O projeto foi elaborado em 2 (dois) dias.
 
 * Telas de Cadastro para os clientes de bares.
 
-* Possibilidade de edição de dados.
+* Possibilidade de edição de dados na Página Profile.
 
