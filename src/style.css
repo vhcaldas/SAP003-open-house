@@ -2,6 +2,7 @@
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .error {
@@ -313,7 +314,7 @@
 
 .toggle-side-menu:checked+.side-menu {
   width: 45vw;
-  top: 18vw;
+  top: 13vw;
   transition: all .4s linear;
   background-color: #e0245c;
 }
@@ -323,6 +324,9 @@
 }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -365,9 +369,9 @@
   height: 20vh;
   border: black;
   padding: 10px;
-  box-shadow: 2vw 2vw 4vw #e0245c;
+  box-shadow: 1vw 1vw 2.5vw #e0245c;
   border-radius: 5vw;
-  margin: 1vw;
+  margin: 2.5vw 1vw;
 }
 
 .image {
@@ -385,12 +389,13 @@
   flex-direction: column;
   align-items: flex-start;
   font-size: 80%;
+  margin-left: 8vw;
 }
 
 .btn-delete {
   display: flex;
   justify-content: baseline;
-  align-self: flex-end;
+  align-self: center;
   background: transparent;
   border: transparent;
 }
@@ -560,14 +565,14 @@
 @media screen and (min-width: 992px) {
 
   .button-login {
-    width: 25vw;
+    width: 20vw;
     height: 10vh;
     margin: 0;
     margin-right: 1vw;
   }
 
   .button-register {
-    width: 25vw;
+    width: 20vw;
     height: 10vh;
     margin: 0;
   }
@@ -582,10 +587,12 @@
 
   .input-email {
     width: 47vw;
+    padding: 2vw;
   }
 
   .input-password {
     width: 47vw;
+    padding: 2vw;
   }
 
   .input-estate {
@@ -610,6 +617,58 @@
   .register-main-title {
     margin-bottom: 2vw;
   }
+
+  /*Página Home*/
+
+  .div-text{
+    margin-left: 1vw;
+  }
+
+  .event-post{
+    width: 40vw;
+    height: auto;
+  }
+
+  .image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5vw;
+  }
+
+  .my-home{
+    font-size: 1.8rem;
+  }
+
+  .toggle-side-menu:checked+.side-menu {
+    width: 15vw;
+    top: 17vh;
+    margin-left: 3vw;
+  }
+
+  .menu-icon{
+    padding: 0.5vw;
+  }
+
+  .menu-options{
+    font-size: 1.5vw;
+    font-weight: 600;
+  }
+  
+  .footer{
+    height: min-content;
+  }
+
+  .post-layout{
+    padding: 0;
+  }
+
+  .print-event{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+  }
+
+  /*Página Forgot Password*/
 
   .fp-main{
     flex-direction: row;
