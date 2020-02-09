@@ -91,41 +91,43 @@ const Event = (props) => {
       class: 'addEvent',
       text: 'Adicionar Evento',
       })}
-      ${Input({
-      class: 'input-image',
-      placeholder: 'Insira a URL de sua imagem',
-      type: 'text',
+      <div class="event-options">
+        ${Input({
+          class: 'input-image',
+          placeholder: 'Insira a URL de sua imagem',
+          type: 'text',
+        })}
+        ${Input({
+          class: 'input-bandName',
+          placeholder: 'Nome da banda/artista',
+          type: 'text',
+        })}
+        ${Input({
+          class: 'input-date',
+          placeholder: 'Selecione a data',
+          type: 'date',
+        })}
+        ${Input({
+          class: 'input-time',
+          placeholder: 'Selecione a data',
+          type: 'time',
+          min: '00:00',
+          max: '23:00',
+        })}
+        <select class="genres">
+        <option value="Rock">Rock</option>
+        <option value="MPB">MPB</option>
+        <option value="Samba">Samba</option>
+        <option value="Sertanejo">Sertanejo</option>
+        <option value="Pop">Pop</option>
+        </select>
+      </div>
+      <div class="div-event">
+      ${Button({
+        class: 'button-back',
+        title: 'LIMPAR',
+        onClick: cleanForm,
       })}
-      ${Input({
-      class: 'input-bandName',
-      placeholder: 'Nome da banda/artista',
-      type: 'text',
-      })}
-      ${Input({
-      class: 'input-date',
-      placeholder: 'Selecione a data',
-      type: 'date',
-      })}
-      ${Input({
-      class: 'input-time',
-      placeholder: 'Selecione a data',
-      type: 'time',
-      min: '00:00',
-      max: '23:00',
-      })}
-  <select class="genres">
-    <option value="Rock">Rock</option>
-    <option value="MPB">MPB</option>
-    <option value="Samba">Samba</option>
-    <option value="Sertanejo">Sertanejo</option>
-    <option value="Pop">Pop</option>
-  </select>
-  <div class="div-event">
-    ${Button({
-    class: 'button-back',
-    title: 'LIMPAR',
-    onClick: cleanForm,
-    })}
     ${Button({
     class: 'button-continue',
     title: 'SALVAR',
